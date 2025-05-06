@@ -1,4 +1,3 @@
-# Ensure numpy is installed
 import os
 import pandas as pd
 import numpy as np
@@ -369,3 +368,9 @@ f_scores = fisher_score(scaled_features, labels)
 top_indices = np.argsort(f_scores)[::-1][:10]
 top_features = [all_features.columns[i] for i in top_indices]
 print("Top features by Fisher Score:", top_features)
+
+# 儲存特徵與標籤供未來使用
+merged_df = all_features.copy()
+merged_df["Label"] = labels
+os.makedirs("data", exist_ok=True)
+merged_df.to_csv(os.path.join("data", "merged.csv"), index=False)
