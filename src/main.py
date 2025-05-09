@@ -28,8 +28,8 @@ from sklearn.exceptions import ConvergenceWarning
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
 # 目錄設置
-DATA_DIR = 'data'
-IMG_DIR = 'img'
+DATA_DIR = '../data'
+IMG_DIR = '../img'
 os.makedirs(IMG_DIR, exist_ok=True)
 
 # --------------------------------------------------
