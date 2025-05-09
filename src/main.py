@@ -23,13 +23,14 @@ from sklearn.metrics import (
     roc_curve, auc
 )
 from sklearn.exceptions import ConvergenceWarning
+import joblib
 
 # 靜音收斂警告
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
 # 目錄設置
-DATA_DIR = '../data'
-IMG_DIR = '../img'
+DATA_DIR = 'data'
+IMG_DIR = 'img'
 os.makedirs(IMG_DIR, exist_ok=True)
 
 # --------------------------------------------------
@@ -295,3 +296,85 @@ plt.title('Top10 Fisher Scores')
 plt.tight_layout()
 plt.savefig(os.path.join(IMG_DIR,'fisher_score_top10.png'))
 plt.close()
+
+# --------------------------------------------------
+# 14. One-Class SVM
+# --------------------------------------------------
+# 只使用正常樣本訓練
+X_normal = X[y == 1]
+ocsvm = OneClassSVM(kernel='rbf', nu=0.1).fit(X_normal)
+ocsvm_scores = -ocsvm.score_samples(X)  # 負分數表示異常程度
+
+plt.figure(figsize=(10,4))
+plt.plot(ocsvm_scores, label="One-Class SVM Score")
+plt.axhline(np.percentile(ocsvm_scores, 95), ls='--', c='red', label='95%')
+plt.legend()
+plt.tight_layout()
+plt.savefig(os.path.join(IMG_DIR,'ocsvm_scores.png'))
+plt.close()
+
+# --------------------------------------------------
+# 15. Isolation Forest
+# --------------------------------------------------
+iso_forest = IsolationForest(contamination=0.1, random_state=42).fit(X)
+iso_scores = -iso_forest.score_samples(X)  # 負分數表示異常程度
+
+plt.figure(figsize=(10,4))
+plt.plot(iso_scores, label="Isolation Forest Score")
+plt.axhline(np.percentile(iso_scores, 95), ls='--', c='red', label='95%')
+plt.legend()
+plt.tight_layout()
+plt.savefig(os.path.join(IMG_DIR,'iso_forest_scores.png'))
+plt.close()
+
+# --------------------------------------------------
+# 16. 模型比較
+# --------------------------------------------------
+# 計算各個模型的異常分數
+scores = {
+    'Hotelling T²': t2,
+    'SPE': spe,
+    'One-Class SVM': ocsvm_scores,
+    'Isolation Forest': iso_scores
+}
+
+# 計算各個模型的異常檢測結果
+thresholds = {name: np.percentile(score, 95) for name, score in scores.items()}
+predictions = {name: score > thresholds[name] for name, score in scores.items()}
+
+# 計算各個模型的評估指標
+results = {}
+for name, pred in predictions.items():
+    results[name] = {
+        'Accuracy': accuracy_score(y, pred),
+        'Precision': precision_score(y, pred),
+        'Recall': recall_score(y, pred),
+        'F1': f1_score(y, pred)
+    }
+
+# 將結果轉換為DataFrame並顯示
+results_df = pd.DataFrame(results).T
+print("\nAnomaly Detection Models Comparison:")
+print(results_df)
+
+# 繪製模型比較圖
+plt.figure(figsize=(12,6))
+results_df.plot(kind='bar', ax=plt.gca())
+plt.title('Model Comparison')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig(os.path.join(IMG_DIR,'model_comparison.png'))
+plt.close()
+
+# --------------------------------------------------
+# 17. 保存模型
+# --------------------------------------------------
+MODEL_DIR = '../models'
+os.makedirs(MODEL_DIR, exist_ok=True)
+
+# 保存模型
+joblib.dump(ocsvm, os.path.join(MODEL_DIR, 'ocsvm_model.pkl'))
+joblib.dump(iso_forest, os.path.join(MODEL_DIR, 'iso_forest_model.pkl'))
+joblib.dump(scaler, os.path.join(MODEL_DIR, 'scaler.pkl'))
+
+print("\nModels saved successfully!")

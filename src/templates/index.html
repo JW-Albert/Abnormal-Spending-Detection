@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>消費異常檢測系統</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .result-box {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .normal {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+
+        .anomaly {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">消費異常檢測系統</h2>
+
+        <form id="predictionForm" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="date" class="form-label">日期</label>
+                        <input type="date" class="form-control" id="date" name="date" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="item" class="form-label">商品名稱</label>
+                        <input type="text" class="form-control" id="item" name="item" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="quantity" class="form-label">數量</label>
+                        <input type="number" class="form-control" id="quantity" name="quantity" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">單價</label>
+                        <input type="number" class="form-control" id="price" name="price" step="0.01" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="location" class="form-label">地點</label>
+                        <input type="text" class="form-control" id="location" name="location" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="form-label">類別</label>
+                        <input type="text" class="form-control" id="category" name="category" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="location_weight" class="form-label">地點權重</label>
+                        <input type="number" class="form-control" id="location_weight" name="location_weight"
+                            step="0.01" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="total_daily_spending" class="form-label">總消費金額</label>
+                        <input type="number" class="form-control" id="total_daily_spending" name="total_daily_spending"
+                            step="0.01" required>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">分析</button>
+        </form>
+
+        <div id="resultBox" class="result-box">
+            <h4>分析結果</h4>
+            <div id="resultContent"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                date: document.getElementById('date').value,
+                item: document.getElementById('item').value,
+                quantity: document.getElementById('quantity').value,
+                price: document.getElementById('price').value,
+                location: document.getElementById('location').value,
+                category: document.getElementById('category').value,
+                location_weight: document.getElementById('location_weight').value,
+                total_daily_spending: document.getElementById('total_daily_spending').value
+            };
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    const resultBox = document.getElementById('resultBox');
+                    const resultContent = document.getElementById('resultContent');
+
+                    resultBox.style.display = 'block';
+                    resultBox.className = `result-box ${result.is_anomaly ? 'anomaly' : 'normal'}`;
+
+                    resultContent.innerHTML = `
+                        <p><strong>狀態：</strong>${result.is_anomaly ? '異常' : '正常'}</p>
+                        <p><strong>綜合得分：</strong>${result.combined_score.toFixed(4)}</p>
+                        <p><strong>One-Class SVM 得分：</strong>${result.predictions.ocsvm.toFixed(4)}</p>
+                        <p><strong>Isolation Forest 得分：</strong>${result.predictions.iso_forest.toFixed(4)}</p>
+                    `;
+                } else {
+                    alert('預測失敗：' + result.error);
+                }
+            } catch (error) {
+                alert('發生錯誤：' + error.message);
+            }
+        });
+    </script>
+</body>
+
+</html>
