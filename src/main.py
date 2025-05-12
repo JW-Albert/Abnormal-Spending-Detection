@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from get_include import get_all_data
 
 from scipy.stats import kurtosis, skew
 from scipy.fft import fft
@@ -36,22 +37,8 @@ os.makedirs(IMG_DIR, exist_ok=True)
 # --------------------------------------------------
 # 1. 載入資料並加上 Label
 # --------------------------------------------------
-normal_files   = [os.path.join(DATA_DIR,'normal',f)   for f in os.listdir(os.path.join(DATA_DIR,'normal'))   if f.endswith('.csv')]
-abnormal_files = [os.path.join(DATA_DIR,'abnormal',f) for f in os.listdir(os.path.join(DATA_DIR,'abnormal')) if f.endswith('.csv')]
-dfs = []
-
-for f in normal_files:
-    df = pd.read_csv(f)
-    df['Label'] = 1
-    dfs.append(df)
-
-for f in abnormal_files:
-    df = pd.read_csv(f)
-    df['Label'] = 0
-    dfs.append(df)
-
-df_all = pd.concat(dfs, ignore_index=True)
-print(f"Loaded normal={len(normal_files)} files, abnormal={len(abnormal_files)} files, total rows={len(df_all)}")
+df_all = get_all_data('data')
+print(f"Loaded total rows={len(df_all)}")
 
 # --------------------------------------------------
 # 2. 資料簡化與標籤編碼

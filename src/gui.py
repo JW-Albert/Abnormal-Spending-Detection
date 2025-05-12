@@ -6,6 +6,7 @@ import joblib
 import os
 from scipy.stats import kurtosis, skew
 from scipy.fft import fft
+from get_include import get_unique_options
 
 app = Flask(__name__)
 
@@ -63,6 +64,11 @@ def frequency_domain_features(df: pd.DataFrame, cols: list, fs: int = 1, base: i
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/get_options')
+def get_options():
+    options = get_unique_options('data')
+    return jsonify(options)
 
 @app.route('/predict', methods=['POST'])
 def predict():
