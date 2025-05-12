@@ -131,6 +131,22 @@ num_cols = ['Price','Quantity','Total Daily Spending']
 time_df  = time_domain(df_all, num_cols, unit=10)
 freq_df  = frequency_domain(df_all, num_cols, fs=1, base=1, n=3, unit=10)
 
+# 新增：合併地點權重
+location_weights = []
+for i in range(0, len(df_all), 10):
+    blk = df_all.iloc[i:i+10]
+    if 'Weight' in blk.columns:
+        mode_weight = blk['Weight'].mode()
+        if not mode_weight.empty:
+            location_weights.append(mode_weight.iloc[0])
+        else:
+            location_weights.append(blk['Weight'].iloc[0])
+    else:
+        location_weights.append(0)
+
+features = pd.concat([time_df, freq_df], axis=1)
+features['Location_Weight'] = location_weights
+
 # 時域首筆示意圖
 plt.figure(figsize=(14,4))
 sns.barplot(x=time_df.columns, y=time_df.iloc[0].values)
@@ -356,7 +372,7 @@ plt.close()
 # --------------------------------------------------
 # 17. 保存模型
 # --------------------------------------------------
-MODEL_DIR = '../models'
+MODEL_DIR = 'models'
 os.makedirs(MODEL_DIR, exist_ok=True)
 
 # 保存模型

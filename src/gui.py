@@ -21,6 +21,9 @@ models = {
     'scaler': None
 }
 
+# 儲存當日消費資料
+daily_spending = []
+
 def load_models():
     try:
         models['ocsvm'] = joblib.load(os.path.join(MODEL_DIR, 'ocsvm_model.pkl'))
@@ -70,26 +73,68 @@ def get_options():
     options = get_unique_options('data')
     return jsonify(options)
 
-@app.route('/predict', methods=['POST'])
-def predict():
+@app.route('/add_spending', methods=['POST'])
+def add_spending():
     try:
-        data = request.get_json()  # list of dicts
-        df = pd.DataFrame(data)
-        # 編碼
-        for col in ['Location', 'Item', 'Category']:
+        data = request.get_json()
+        # 將新的消費資料加入當日消費列表，正確存入權重
+        daily_spending.append({
+            'Location': data['location'],
+            'Weight': data.get('weight', ''),
+            'Item': data['item'],
+            'Price': float(data['price']),
+            'Quantity': 1,  # 預設數量為1
+            'Total Daily Spending': float(data['price'])
+        })
+        return jsonify({
+            'success': True,
+            'message': '消費資料已新增',
+            'current_spending': daily_spending
+        })
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        })
+
+@app.route('/analyze', methods=['POST'])
+def analyze():
+    try:
+        if not daily_spending:
+            return jsonify({
+                'success': False,
+                'error': '沒有消費資料可供分析'
+            })
+
+        df = pd.DataFrame(daily_spending)
+        for col in ['Location', 'Item']:
             df[col + '_Code'] = pd.Categorical(df[col]).codes
-        # 產生時域/頻域特徵
+
         num_cols = ['Price', 'Quantity', 'Total Daily Spending']
         time_features = time_domain_features(df, num_cols)
         freq_features = frequency_domain_features(df, num_cols)
-        # 分類特徵用 mode
-        block_cats = df[['Location_Code', 'Item_Code', 'Category_Code']].mode()
+
+        block_cats = df[['Location_Code', 'Item_Code']].mode()
         if block_cats.empty:
-            block_cats = df[['Location_Code', 'Item_Code', 'Category_Code']].iloc[[0]]
+            block_cats = df[['Location_Code', 'Item_Code']].iloc[[0]]
         else:
             block_cats = block_cats.iloc[[0]]
-        # 合併
-        all_features = pd.concat([time_features, freq_features, block_cats], axis=1)
+
+        # 新增：地點權重特徵
+        if 'Weight' in df.columns:
+            location_weight = df['Weight'].mode()
+            if not location_weight.empty:
+                location_weight = location_weight.iloc[0]
+            else:
+                location_weight = df['Weight'].iloc[0]
+        else:
+            location_weight = 0
+        location_weight_df = pd.DataFrame({'Location_Weight': [location_weight]})
+
+        # 合併所有特徵
+        all_features = pd.concat([time_features, freq_features, block_cats, location_weight_df], axis=1)
+
+        # 特徵順序要和訓練時一致
         expected_features = [
             'Price_rms', 'Price_mean', 'Price_std', 'Price_ptp', 'Price_kurtosis', 'Price_skewness',
             'Quantity_rms', 'Quantity_mean', 'Quantity_std', 'Quantity_ptp', 'Quantity_kurtosis', 'Quantity_skewness',
@@ -98,23 +143,24 @@ def predict():
             'Price_freq_1', 'Price_freq_2', 'Price_freq_3',
             'Quantity_freq_1', 'Quantity_freq_2', 'Quantity_freq_3',
             'Total Daily Spending_freq_1', 'Total Daily Spending_freq_2', 'Total Daily Spending_freq_3',
-            'Location_Code', 'Item_Code', 'Category_Code'
+            'Location_Code', 'Item_Code', 'Location_Weight'
         ]
         all_features = all_features[expected_features]
-        # 標準化
+
         X = models['scaler'].transform(all_features)
-        # 預測
         predictions = {
             'ocsvm': float(models['ocsvm'].score_samples(X)[0]),
             'iso_forest': float(models['iso_forest'].score_samples(X)[0])
         }
         combined_score = (predictions['ocsvm'] + predictions['iso_forest']) / 2
         is_anomaly = combined_score < -0.5
+        daily_spending.clear()
         return jsonify({
             'success': True,
             'predictions': predictions,
             'combined_score': combined_score,
-            'is_anomaly': bool(is_anomaly)
+            'is_anomaly': bool(is_anomaly),
+            'message': '分析完成'
         })
     except Exception as e:
         return jsonify({

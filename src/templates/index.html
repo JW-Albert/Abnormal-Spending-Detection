@@ -4,127 +4,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>消費異常檢測系統</title>
+    <title>消費異常偵測系統</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .result-box {
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 5px;
-            display: none;
+        .container {
+            max-width: 800px;
         }
 
-        .normal {
-            background-color: #d4edda;
-            border: 1px solid #c3e6cb;
-        }
-
-        .anomaly {
-            background-color: #f8d7da;
-            border: 1px solid #f5c6cb;
+        .spending-list {
+            max-height: 300px;
+            overflow-y: auto;
         }
     </style>
 </head>
 
 <body>
     <div class="container mt-5">
-        <h2 class="mb-4">消費異常檢測系統</h2>
-
-        <form id="predictionForm" class="mb-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="date" class="form-label">日期</label>
-                        <input type="date" class="form-control" id="date" name="date" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="item" class="form-label">商品名稱</label>
-                        <input type="text" class="form-control" id="item" name="item" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="quantity" class="form-label">數量</label>
-                        <input type="number" class="form-control" id="quantity" name="quantity" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="price" class="form-label">單價</label>
-                        <input type="number" class="form-control" id="price" name="price" step="0.01" required>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="location" class="form-label">地點</label>
-                        <input type="text" class="form-control" id="location" name="location" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="category" class="form-label">類別</label>
-                        <input type="text" class="form-control" id="category" name="category" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="location_weight" class="form-label">地點權重</label>
-                        <input type="number" class="form-control" id="location_weight" name="location_weight"
-                            step="0.01" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="total_daily_spending" class="form-label">總消費金額</label>
-                        <input type="number" class="form-control" id="total_daily_spending" name="total_daily_spending"
-                            step="0.01" required>
-                    </div>
-                </div>
+        <h1 class="mb-4">消費異常偵測系統</h1>
+        <!-- 消費輸入表單 -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">新增消費</h5>
             </div>
-            <button type="submit" class="btn btn-primary">分析</button>
-        </form>
-
-        <div id="resultBox" class="result-box">
-            <h4>分析結果</h4>
-            <div id="resultContent"></div>
+            <div class="card-body">
+                <form id="spendingForm">
+                    <div class="mb-3">
+                        <label for="location" class="form-label">消費地點</label>
+                        <select class="form-select" id="location" required>
+                            <option value="">請選擇地點</option>
+                        </select>
+                    </div>
+                    <div class="mb-3" id="manualLocationBox" style="display:none;">
+                        <label for="manualLocation" class="form-label">請輸入商店名稱</label>
+                        <input type="text" class="form-control" id="manualLocation">
+                        <label for="manualWeight" class="form-label mt-2">請輸入權重</label>
+                        <input type="number" class="form-control" id="manualWeight" step="0.01" min="0">
+                    </div>
+                    <div class="mb-3">
+                        <label for="item" class="form-label">商品品項</label>
+                        <select class="form-select" id="item" required>
+                            <option value="">請選擇商品</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">消費金額</label>
+                        <input type="number" class="form-control" id="price" required min="0" step="0.01">
+                    </div>
+                    <button type="submit" class="btn btn-primary">新增消費</button>
+                </form>
+            </div>
+        </div>
+        <!-- 當日消費列表 -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">當日消費列表</h5>
+            </div>
+            <div class="card-body">
+                <div class="spending-list" id="spendingList"></div>
+                <button id="analyzeBtn" class="btn btn-success mt-3" disabled>開始分析</button>
+            </div>
+        </div>
+        <!-- 分析結果 -->
+        <div class="card" id="resultCard" style="display: none;">
+            <div class="card-header">
+                <h5 class="mb-0">分析結果</h5>
+            </div>
+            <div class="card-body">
+                <div id="analysisResult"></div>
+            </div>
         </div>
     </div>
-
     <script>
-        document.getElementById('predictionForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const formData = {
-                date: document.getElementById('date').value,
-                item: document.getElementById('item').value,
-                quantity: document.getElementById('quantity').value,
-                price: document.getElementById('price').value,
-                location: document.getElementById('location').value,
-                category: document.getElementById('category').value,
-                location_weight: document.getElementById('location_weight').value,
-                total_daily_spending: document.getElementById('total_daily_spending').value
-            };
-
-            try {
-                const response = await fetch('/predict', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
+        let allLocations = [];
+        let allItems = [];
+        // 載入選項
+        fetch('/get_options')
+            .then(response => response.json())
+            .then(data => {
+                // 地點
+                const locationSelect = document.getElementById('location');
+                allLocations = data.locations;
+                allLocations.forEach(location => {
+                    const option = new Option(location.name, location.name);
+                    locationSelect.add(option);
                 });
-
-                const result = await response.json();
-
-                if (result.success) {
-                    const resultBox = document.getElementById('resultBox');
-                    const resultContent = document.getElementById('resultContent');
-
-                    resultBox.style.display = 'block';
-                    resultBox.className = `result-box ${result.is_anomaly ? 'anomaly' : 'normal'}`;
-
-                    resultContent.innerHTML = `
-                        <p><strong>狀態：</strong>${result.is_anomaly ? '異常' : '正常'}</p>
-                        <p><strong>綜合得分：</strong>${result.combined_score.toFixed(4)}</p>
-                        <p><strong>One-Class SVM 得分：</strong>${result.predictions.ocsvm.toFixed(4)}</p>
-                        <p><strong>Isolation Forest 得分：</strong>${result.predictions.iso_forest.toFixed(4)}</p>
-                    `;
-                } else {
-                    alert('預測失敗：' + result.error);
+                // 加入手動輸入選項
+                const manualOption = new Option('手動輸入', '__manual__');
+                locationSelect.add(manualOption);
+                // 商品（合併所有 category 下的 items）
+                const itemSelect = document.getElementById('item');
+                allItems = [];
+                if (data.categories) {
+                    data.categories.forEach(cat => {
+                        if (cat.items && Array.isArray(cat.items)) {
+                            allItems = allItems.concat(cat.items.map(i => (typeof i === 'object' && i.name) ? i.name : i));
+                        }
+                    });
                 }
-            } catch (error) {
-                alert('發生錯誤：' + error.message);
+                // 移除重複
+                allItems = [...new Set(allItems)];
+                allItems.forEach(item => {
+                    const option = new Option(item, item);
+                    itemSelect.add(option);
+                });
+            });
+        // 地點選擇事件
+        document.getElementById('location').addEventListener('change', function () {
+            const manualBox = document.getElementById('manualLocationBox');
+            if (this.value === '__manual__') {
+                manualBox.style.display = '';
+                document.getElementById('manualLocation').required = true;
+                document.getElementById('manualWeight').required = true;
+            } else {
+                manualBox.style.display = 'none';
+                document.getElementById('manualLocation').required = false;
+                document.getElementById('manualWeight').required = false;
             }
+        });
+        // 新增消費
+        document.getElementById('spendingForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            let location, weight;
+            if (document.getElementById('location').value === '__manual__') {
+                location = document.getElementById('manualLocation').value;
+                weight = document.getElementById('manualWeight').value;
+            } else {
+                location = document.getElementById('location').value;
+                // 從 allLocations 找到對應的 weight
+                const found = allLocations.find(l => l.name === location);
+                weight = found ? found.weight : '';
+            }
+            const data = {
+                location: location,
+                weight: weight,
+                item: document.getElementById('item').value,
+                price: document.getElementById('price').value
+            };
+            fetch('/add_spending', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        updateSpendingList(data.current_spending);
+                        document.getElementById('analyzeBtn').disabled = false;
+                        this.reset();
+                        document.getElementById('manualLocationBox').style.display = 'none';
+                    } else {
+                        alert('錯誤：' + data.error);
+                    }
+                });
+        });
+        // 更新消費列表
+        function updateSpendingList(spendings) {
+            const list = document.getElementById('spendingList');
+            list.innerHTML = spendings.map(spending => `
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <p class="mb-1">地點：${spending.Location}</p>
+                        <p class="mb-1">商品：${spending.Item}</p>
+                        <p class="mb-1">權重：${spending.Weight ? spending.Weight : ''}</p>
+                        <p class="mb-0">金額：${spending.Price}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+        // 分析按鈕
+        document.getElementById('analyzeBtn').addEventListener('click', function () {
+            fetch('/analyze', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const resultCard = document.getElementById('resultCard');
+                        const resultDiv = document.getElementById('analysisResult');
+                        resultDiv.innerHTML = `
+                        <div class="alert ${data.is_anomaly ? 'alert-danger' : 'alert-success'}">
+                            <h4 class="alert-heading">${data.is_anomaly ? '異常消費' : '正常消費'}</h4>
+                            <p>綜合分數：${data.combined_score.toFixed(4)}</p>
+                            <p>OCSVM 分數：${data.predictions.ocsvm.toFixed(4)}</p>
+                            <p>Isolation Forest 分數：${data.predictions.iso_forest.toFixed(4)}</p>
+                        </div>
+                    `;
+                        resultCard.style.display = 'block';
+                        this.disabled = true;
+                    } else {
+                        alert('錯誤：' + data.error);
+                    }
+                });
         });
     </script>
 </body>
