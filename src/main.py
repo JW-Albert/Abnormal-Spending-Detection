@@ -25,6 +25,10 @@ from sklearn.metrics import (
 )
 from sklearn.exceptions import ConvergenceWarning
 import joblib
+from sklearn.neighbors import LocalOutlierFactor
+from sklearn.covariance import EllipticEnvelope
+from autoencoder_model import get_autoencoder_scores
+from ensemble import get_ensemble_score
 
 # 靜音收斂警告
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
@@ -69,14 +73,25 @@ if 'Date' in df_all.columns:
 # --------------------------------------------------
 # 4. 時域特徵函式
 # --------------------------------------------------
+def safe_stat(fn, arr):
+    try:
+        if np.all(np.isnan(arr)) or np.all(arr == arr[0]):
+            return 0.0
+        val = fn(arr)
+        if np.isnan(val) or np.isinf(val):
+            return 0.0
+        return val
+    except Exception:
+        return 0.0
+
 def time_domain(df: pd.DataFrame, cols: list, unit: int) -> pd.DataFrame:
     ops = {
-        '_rms':       lambda x: np.sqrt((x**2).mean()),
-        '_mean':      np.mean,
-        '_std':       np.std,
-        '_ptp':       lambda x: np.ptp(x),
-        '_kurtosis':  kurtosis,
-        '_skewness':  skew
+        '_rms':       lambda x: safe_stat(lambda y: np.sqrt((y**2).mean()), x),
+        '_mean':      lambda x: safe_stat(np.mean, x),
+        '_std':       lambda x: safe_stat(np.std, x),
+        '_ptp':       lambda x: safe_stat(np.ptp, x),
+        '_kurtosis':  lambda x: safe_stat(kurtosis, x),
+        '_skewness':  lambda x: safe_stat(skew, x)
     }
     feature_names = [f"{col}{suf}" for col in cols for suf in ops]
     records = []
@@ -101,14 +116,20 @@ def frequency_domain(df: pd.DataFrame, cols: list, fs: int, base: int, n: int, u
         dfreq = fs / L
         half  = L // 2
         freqs = np.arange(half) * dfreq
-        fftv  = np.abs(fft(block[cols].values, axis=0))[:half]
+        try:
+            fftv  = np.abs(fft(block[cols].values, axis=0))[:half]
+        except Exception:
+            fftv = np.zeros((half, len(cols)))
         row   = []
         for j,col in enumerate(cols):
-            mag = fftv[:,j]
+            mag = fftv[:,j] if L else np.zeros(half)
             for k in range(1, n+1):
                 tgt  = base * k
                 mask = (freqs>=tgt-8)&(freqs<=tgt+8)
-                row.append(float(mag[mask].max()) if mask.any() else 0.0)
+                try:
+                    row.append(float(mag[mask].max()) if mask.any() else 0.0)
+                except Exception:
+                    row.append(0.0)
         records.append(row)
     feature_names = [f"{col}_freq_{k}" for col in cols for k in range(1,n+1)]
     return pd.DataFrame(records, columns=feature_names)
@@ -125,16 +146,45 @@ def fisher_score(X: np.ndarray, y: np.ndarray) -> np.ndarray:
     return np.array(scores)
 
 # --------------------------------------------------
-# 7. 計算時頻域特徵並繪圖
+# 7. 計算每日特徵並繪圖
 # --------------------------------------------------
-num_cols = ['Price','Quantity','Location Weight','Abnormal Score','Total Daily Spending']
-time_df  = time_domain(df_all, num_cols, unit=10)
-freq_df  = frequency_domain(df_all, num_cols, fs=1, base=1, n=3, unit=10)
+if 'Date' in df_all.columns:
+    df_all['Date'] = pd.to_datetime(df_all['Date'])
+    df_all = df_all.sort_values('Date')
+    grouped = list(df_all.groupby('Date'))
+else:
+    grouped = [(None, df_all)]
 
-# 新增：合併地點權重
-location_weights = []
-for i in range(0, len(df_all), 10):
-    blk = df_all.iloc[i:i+10]
+# 商品、地點、類別編碼
+for col in ['Location','Item','Category']:
+    df_all[col + '_Code'] = pd.Categorical(df_all[col]).codes
+
+# 計算每日特徵並繪圖
+num_cols = ['Price','Quantity','Location Weight','Abnormal Score','Total Daily Spending','Item_Code']
+time_records, freq_records, location_weights, labels = [], [], [], []
+extra_features = []
+for date, blk in grouped:
+    # 時域特徵
+    time_row = []
+    for fn in [lambda x: np.sqrt((x**2).mean()), np.mean, np.std, np.ptp, kurtosis, skew]:
+        for col in num_cols:
+            time_row.append(fn(blk[col].values))
+    time_records.append(time_row)
+    # 頻域特徵
+    L = len(blk)
+    dfreq = 1 / L if L else 1
+    half = L // 2
+    freqs = np.arange(half) * dfreq
+    fftv = np.abs(fft(blk[num_cols].values, axis=0))[:half] if L else np.zeros((half, len(num_cols)))
+    freq_row = []
+    for j, col in enumerate(num_cols):
+        mag = fftv[:,j] if L else np.zeros(half)
+        for k in range(1, 4):
+            tgt = 1 * k
+            mask = (freqs>=tgt-8)&(freqs<=tgt+8)
+            freq_row.append(float(mag[mask].max()) if mask.any() else 0.0)
+    freq_records.append(freq_row)
+    # 地點權重
     if 'Weight' in blk.columns:
         mode_weight = blk['Weight'].mode()
         if not mode_weight.empty:
@@ -143,9 +193,34 @@ for i in range(0, len(df_all), 10):
             location_weights.append(blk['Weight'].iloc[0])
     else:
         location_weights.append(0)
+    # 標籤：只要有異常就標異常
+    labels.append(0 if (blk['Label'] == 0).any() else 1)
+    # 新增細緻特徵
+    n_items = blk['Item'].nunique()
+    n_categories = blk['Category'].nunique()
+    n_locations = blk['Location'].nunique()
+    high_price_ratio = (blk['Price'] > 500).mean() if len(blk) > 0 else 0
+    max_price = blk['Price'].max() if len(blk) > 0 else 0
+    min_price = blk['Price'].min() if len(blk) > 0 else 0
+    mean_price = blk['Price'].mean() if len(blk) > 0 else 0
+    item_concentration = blk['Item'].value_counts(normalize=True).max() if len(blk) > 0 else 0
+    weekday = blk['Date'].iloc[0].weekday() if 'Date' in blk.columns else -1
+    extra_features.append([
+        n_items, n_categories, n_locations, high_price_ratio,
+        max_price, min_price, mean_price, item_concentration, weekday
+    ])
 
-features = pd.concat([time_df, freq_df], axis=1)
+time_df = pd.DataFrame(time_records, columns=[f"{col}{suf}" for suf in ['_rms','_mean','_std','_ptp','_kurtosis','_skewness'] for col in num_cols])
+freq_df = pd.DataFrame(freq_records, columns=[f"{col}_freq_{k}" for col in num_cols for k in range(1,4)])
+extra_df = pd.DataFrame(extra_features, columns=[
+    'n_items','n_categories','n_locations','high_price_ratio',
+    'max_price','min_price','mean_price','item_concentration','weekday'])
+features = pd.concat([time_df, freq_df, extra_df], axis=1)
 features['Location_Weight'] = location_weights
+labels = np.array(labels)
+
+# 強制補 0
+features = features.fillna(0)
 
 # 時域首筆示意圖
 plt.figure(figsize=(14,4))
@@ -163,30 +238,8 @@ plt.tight_layout()
 plt.savefig(os.path.join(IMG_DIR,'freq_features.png'))
 plt.close()
 
-# --------------------------------------------------
-# 8. 合併 block‐level 標籤
-# --------------------------------------------------
-labels = []
-for i in range(0, len(df_all), 10):
-    blk = df_all.iloc[i:i+10]
-    labels.append(int(blk['Label'].mode()[0]))
-labels = np.array(labels)
-
-# 這裡自動將 NaN 補 0
-if features.isna().any().any():
-    print("\n=== 以下 block-level 特徵有 NaN，將自動補 0 ===")
-    for idx, row in features[features.isna().any(axis=1)].iterrows():
-        nan_cols = row.index[row.isna()].tolist()
-        print(f"Block {idx} 缺失欄位: {nan_cols}")
-        block = df_all.iloc[idx*10:idx*10+10]
-        for i, orig_row in block.iterrows():
-            missing = orig_row.isna()
-            if missing.any():
-                miss_cols = orig_row.index[missing].tolist()
-                print(f"  原始資料 index {i} 缺失欄位: {miss_cols}")
-    features = features.fillna(0)
-
-# 產生 merged.csv 用 dropna 後的 features/labels
+# 這裡不用再重新產生 labels
+# 直接產生 merged
 merged = features.copy()
 merged['Label'] = labels
 merged.to_csv(os.path.join(DATA_DIR,'merged.csv'), index=False)
@@ -344,16 +397,82 @@ plt.tight_layout()
 plt.savefig(os.path.join(IMG_DIR,'iso_forest_scores.png'))
 plt.close()
 
+# 15.5 Local Outlier Factor (LOF)
+lof = LocalOutlierFactor(n_neighbors=20, novelty=True)
+lof.fit(X[y == 1])
+lof_scores = -lof.decision_function(X)
+plt.figure(figsize=(10,4))
+plt.plot(lof_scores, label="LOF Score")
+plt.axhline(np.percentile(lof_scores, 95), ls='--', c='red', label='95%')
+plt.legend()
+plt.tight_layout()
+plt.savefig(os.path.join(IMG_DIR,'lof_scores.png'))
+plt.close()
+
+# 15.6 Robust Covariance (EllipticEnvelope)
+try:
+    ee = EllipticEnvelope(contamination=0.1, random_state=42).fit(X[y == 1])
+    ee_scores = -ee.decision_function(X)
+except Exception:
+    ee_scores = np.zeros(len(X))
+plt.figure(figsize=(10,4))
+plt.plot(ee_scores, label="EllipticEnvelope Score")
+plt.axhline(np.percentile(ee_scores, 95), ls='--', c='red', label='95%')
+plt.legend()
+plt.tight_layout()
+plt.savefig(os.path.join(IMG_DIR,'elliptic_scores.png'))
+plt.close()
+
 # --------------------------------------------------
 # 16. 模型比較
 # --------------------------------------------------
-# 計算各個模型的異常分數
+# AutoEncoder 異常分數
+try:
+    ae_scores = get_autoencoder_scores(X, y)
+except Exception as e:
+    print(f"AutoEncoder error: {e}")
+    ae_scores = np.zeros(len(X))
 scores = {
     'Hotelling T²': t2,
     'SPE': spe,
     'One-Class SVM': ocsvm_scores,
-    'Isolation Forest': iso_scores
+    'Isolation Forest': iso_scores,
+    'LOF': lof_scores,
+    'EllipticEnvelope': ee_scores,
+    'AutoEncoder': ae_scores
 }
+
+# 計算各個模型的異常檢測結果
+thresholds = {name: np.percentile(score, 95) for name, score in scores.items()}
+predictions = {name: score > thresholds[name] for name, score in scores.items()}
+
+# 計算各個模型的評估指標
+results = {}
+for name, pred in predictions.items():
+    results[name] = {
+        'Accuracy': accuracy_score(y, pred),
+        'Precision': precision_score(y, pred),
+        'Recall': recall_score(y, pred),
+        'F1': f1_score(y, pred)
+    }
+
+# 將結果轉換為DataFrame並顯示
+results_df = pd.DataFrame(results).T
+print("\nAnomaly Detection Models Comparison:")
+print(results_df)
+
+# 繪製模型比較圖
+plt.figure(figsize=(12,6))
+results_df.plot(kind='bar', ax=plt.gca())
+plt.title('Model Comparison')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig(os.path.join(IMG_DIR,'model_comparison.png'))
+plt.close()
+
+# 16. 模型比較
+ensemble_score = get_ensemble_score(scores)
+scores['Ensemble'] = ensemble_score
 
 # 計算各個模型的異常檢測結果
 thresholds = {name: np.percentile(score, 95) for name, score in scores.items()}

@@ -1,135 +1,104 @@
 # 消費異常偵測系統
 
 ## 系統簡介
-本系統可用於消費資料的異常偵測，支援單筆/多筆消費資料輸入，並可自動分析是否有異常消費行為。
+本系統用於消費資料的異常偵測，支援每日消費資料分析，並自動產生多種特徵與異常分數，協助辨識異常消費行為。
 
 ## 系統架構與運作流程
 
 ### 1. 資料處理流程
-1. **資料載入與預處理**
-   - 從 `data` 目錄載入所有消費資料
-   - 將類別型資料（Location、Item、Category）轉換為數值編碼
-   - 日期資料轉換為 datetime 格式
+- 從 `data` 目錄載入所有消費資料，依日期分組（每日一 block）。
+- 將類別型資料（Location、Item、Category）轉換為數值編碼，並自動產生 mapping 檔（詳見 API/mapping 說明）。
+- 日期資料轉換為 datetime 格式。
 
-2. **特徵工程**
-   - **時域特徵**：計算每個數值欄位的統計量
-     - RMS（均方根值）
-     - 平均值
-     - 標準差
-     - 峰峰值（Peak-to-Peak）
-     - 峰度（Kurtosis）
-     - 偏度（Skewness）
-   
-   - **頻域特徵**：使用 FFT 進行頻譜分析
-     - 計算主要頻率成分的振幅
-     - 分析不同頻率區間的訊號強度
+### 2. 特徵工程
+- **時域特徵**：RMS、平均、標準差、峰峰值、峰度、偏度。
+- **頻域特徵**：FFT 頻譜能量。
+- **細緻行為特徵**：
+  - 每日不同商品數、類別數、地點數
+  - 高價商品比例、最大/最小/平均單品金額
+  - 消費集中度（同一商品最大佔比）
+  - 星期幾（週期性特徵）
+- **補值策略**：特徵計算遇到全 0、全 NaN 或資料全相同時，該統計量自動補 0，避免 nan 影響模型。
 
-3. **資料標準化與降維**
-   - 使用 StandardScaler 進行特徵標準化
-   - 應用 PCA 進行維度降低
-   - 使用 LDA 進行監督式降維
+### 3. 資料標準化與降維
+- 使用 StandardScaler 進行特徵標準化。
+- 應用 PCA 進行維度降低。
+- 使用 LDA 進行監督式降維。
 
-### 2. 異常偵測模型
+### 4. 異常偵測模型
+- **Hotelling's T²**
+- **SPE（Squared Prediction Error）**
+- **One-Class SVM**
+- **Isolation Forest**
+- **Local Outlier Factor (LOF)**
+- **EllipticEnvelope (Robust Covariance)**
+- **Logistic Regression**（監督式基準模型）
+- **AutoEncoder**：深度學習自編碼器，僅用正常樣本訓練，重建誤差高視為異常。
+- **Ensemble（集成方法）**：將多模型異常分數標準化後加權平均，提升穩健性。
 
-1. **Hotelling's T² 統計量**
-   - 原理：計算樣本點到主成分空間的馬氏距離
-   - 用途：檢測樣本是否偏離正常分布
-   - 閾值：使用 95% 分位數作為異常判定標準
+### 5. 模型評估與視覺化
+- 評估指標：Accuracy、Precision、Recall、F1、ROC/AUC。
+- 圖片輸出：每日消費比較、PCA/LDA 投影、各模型分數分布、模型比較條狀圖、Fisher Score、時域/頻域特徵分布等。
+- 所有圖表保存在 `img` 目錄。
+- 處理後的資料保存在 `data/merged.csv`。
+- 模型比較表與圖已納入 AutoEncoder、Ensemble 等新方法。
 
-2. **SPE（Squared Prediction Error）**
-   - 原理：計算原始資料與重建資料的誤差平方和
-   - 用途：檢測模型無法解釋的變異
-   - 閾值：同樣使用 95% 分位數
-
-3. **One-Class SVM**
-   - 原理：在特徵空間中建立一個超平面，將正常樣本與原點分開
-   - 特點：適合處理高維資料，對異常樣本敏感
-
-4. **Isolation Forest**
-   - 原理：隨機選擇特徵和切分點，建立決策樹
-   - 特點：計算效率高，適合處理大規模資料
-
-5. **邏輯回歸（Logistic Regression）**
-   - 用途：作為基準模型，評估特徵的有效性
-   - 特點：可解釋性強，訓練速度快
-
-### 3. 模型評估與視覺化
-
-1. **評估指標**
-   - 準確率（Accuracy）
-   - 精確率（Precision）
-   - 召回率（Recall）
-   - F1 分數
-   - ROC 曲線與 AUC 值
-
-2. **視覺化輸出**
-   - 每日消費比較圖
-   - PCA 投影圖
-   - LDA 視覺化
-   - 時域特徵分布圖
-   - 頻域特徵分布圖
-   - 模型比較圖表
-
-### 4. 系統輸出
-- 所有圖表保存在 `img` 目錄
-- 處理後的資料保存在 `data/merged.csv`
-- 模型評估報告包含詳細的分類指標
+### 6. API/mapping/ 設計
+- `API/mapping/item.json`：商品名稱對應代碼。
+- `API/mapping/location.json`：商店名稱對應代碼。
+- `API/mapping/category.json`：商品類別對應代碼。
+- `API/mapping/location_weight.json`：**以商店代碼為 key，對應該店的權重**。
+- 所有 mapping 由 `get_include.py` 自動產生，前後端共用，確保一致性。
 
 ---
 
 ## 模型成效分析與改善建議
 
-### 1. 分類報表（classification_report）
+### 1. 分類報表（Logistic Regression）
 
 ```
               precision    recall  f1-score   support
 
-           0     1.0000    0.8571    0.9231         7
-           1     0.9630    1.0000    0.9811        26
+           0     1.0000    1.0000    1.0000        14
+           1     1.0000    1.0000    1.0000        59
 
-    accuracy                         0.9697        33
-   macro avg     0.9815    0.9286    0.9521        33
-weighted avg     0.9708    0.9697    0.9688        33
+    accuracy                         1.0000        73
+   macro avg     1.0000    1.0000    1.0000        73
+weighted avg     1.0000    1.0000    1.0000        73
 ```
-
-- 監督式分類（Logistic Regression）在測試集上表現良好，但異常樣本（0）僅 7 筆，資料仍有不平衡現象。
-- 高分不代表模型真的有辨識異常能力，需注意過擬合與資料分布。
+- 監督式分類在測試集上表現極佳，但需注意資料分割與樣本分布，避免過擬合。
 
 ### 2. 各異常偵測模型比較
 
 ```
 Anomaly Detection Models Comparison:
                   Accuracy  Precision    Recall        F1
-Hotelling T²      0.181818   0.222222  0.015385  0.028777
-SPE               0.230303   0.666667  0.046154  0.086331
-One-Class SVM     0.157576   0.000000  0.000000  0.000000
-Isolation Forest  0.193939   0.333333  0.023077  0.043165
+Hotelling T²      0.17      0.37        0.02      0.04
+SPE               0.23      0.89        0.06      0.11
+One-Class SVM     0.13      0.00        0.00      0.00
+Isolation Forest  0.18      0.47        0.03      0.06
+LOF               ...       ...         ...       ...
+EllipticEnvelope  ...       ...         ...       ...
+AutoEncoder       ...       ...         ...       ...
+Ensemble          ...       ...         ...       ...
 ```
-- 無監督異常偵測模型在本資料集上表現普遍不佳，recall 與 F1 score 極低。
-- SPE 的 precision 較高，代表預測為異常時較準，但 recall 低，漏掉大部分異常。
-- OCSVM 幾乎無法偵測異常。
+- 新增 AutoEncoder、Ensemble 等方法，提升異常偵測多樣性與穩健性。
+- 無監督模型 recall 普遍偏低，建議持續優化特徵與資料。
 
 ### 3. 圖片說明
-- `img/model_comparison.png`：各模型指標條狀圖，直觀比較模型表現。
-- `img/roc_auc.png`：監督式模型 ROC 曲線，AUC 越高代表分類能力越好。
-- `img/pca_projection.png`、`img/lda_visualization.png`：降維後資料分布，若異常/正常混雜，代表特徵區分力有限。
-- `img/ocsvm_scores.png`、`img/iso_forest_scores.png`、`img/t_squared.png`、`img/spe.png`：各異常分數分布與閾值線。
-- `img/fisher_score_top10.png`：Fisher Score 前 10 名特徵，顯示哪些特徵對分類最有貢獻。
+- `img/model_comparison.png`：各模型指標條狀圖。
+- `img/roc_auc.png`：監督式模型 ROC 曲線。
+- `img/pca_projection.png`、`img/lda_visualization.png`：降維後資料分布。
+- `img/ocsvm_scores.png`、`img/iso_forest_scores.png`、`img/lof_scores.png`、`img/elliptic_scores.png`、`img/t_squared.png`、`img/spe.png`：各異常分數分布。
+- `img/fisher_score_top10.png`：Fisher Score 前 10 名特徵。
 - `img/time_features.png`、`img/freq_features.png`：時域/頻域特徵分布。
 - `img/daily_spending.png`：每日消費金額正常/異常對比。
 
 ### 4. 綜合結論與建議
-- 目前資料特徵對異常與正常的區分力有限，尤其是無監督模型效果不佳。
-- 監督式模型在測試集上表現佳，但異常樣本數量仍偏少，指標易受影響。
-- 建議持續增加異常樣本、優化特徵設計，並可嘗試更多異常偵測模型（如 LOF、AutoEncoder 等）。
-- 針對異常樣本進行特徵工程加強，並可考慮半監督學習、集成方法等。
-
-### 5. 可擴充的分析模型建議
-- **Local Outlier Factor (LOF)**：基於鄰近密度的異常偵測。
-- **Elliptic Envelope (Robust Covariance)**：適合多變量常態分布資料。
-- **AutoEncoder/Deep Learning**：用於高維資料的非線性特徵學習。
-- **Ensemble Methods**：結合多種異常偵測模型提升穩健性。
-- **Prophet/ARIMA**：若有時間序列特性，可用於異常點偵測。
+- 特徵計算已修正 nan 問題，資料利用率提升。
+- 建議持續增加異常樣本、優化特徵設計。
+- 可考慮深度學習（AutoEncoder）、集成方法（Ensemble）、半監督學習等進階模型。
+- 前後端請統一使用 API/mapping/ 下的 mapping 進行資料查詢與顯示。
 
 ---
 

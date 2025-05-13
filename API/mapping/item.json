@@ -1,0 +1,18 @@
+{
+  "Sake": 0,
+  "Rice Ball": 1,
+  "Hot Dog": 2,
+  "Green Tea": 3,
+  "Juice": 4,
+  "Beer": 5,
+  "Milk Tea": 6,
+  "Black Tea": 7,
+  "Coffee": 8,
+  "Whiskey": 9,
+  "Instant Noodles": 10,
+  "Bento": 11,
+  "Parcel Pickup": 12,
+  "Sandwich": 13,
+  "Toiletries": 14,
+  "Stationery": 15
+}
