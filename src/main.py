@@ -15,8 +15,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import IsolationForest
-from sklearn.svm import OneClassSVM
+from sklearn.ensemble import IsolationForest, RandomForestClassifier, GradientBoostingClassifier
+from sklearn.svm import OneClassSVM, SVC
 from sklearn.model_selection import train_test_split, GridSearchCV, StratifiedKFold
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score, f1_score,
@@ -25,11 +25,12 @@ from sklearn.metrics import (
 )
 from sklearn.exceptions import ConvergenceWarning
 import joblib
-from sklearn.neighbors import LocalOutlierFactor
+from sklearn.neighbors import LocalOutlierFactor, KNeighborsClassifier
 from sklearn.covariance import EllipticEnvelope
 from autoencoder_model import get_autoencoder_scores
 from ensemble import get_ensemble_score
 import json
+from sklearn.tree import DecisionTreeClassifier
 
 # 靜音收斂警告
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
@@ -352,6 +353,35 @@ if len(classes) > 1:
     plt.savefig(os.path.join(IMG_DIR,'roc_auc.png'))
     plt.close()
 
+    # 新增多個監督式模型
+    rf = RandomForestClassifier(class_weight='balanced', random_state=42).fit(Xtr_s, ytr)
+    gb = GradientBoostingClassifier(random_state=42).fit(Xtr_s, ytr)
+    dt = DecisionTreeClassifier(class_weight='balanced', random_state=42).fit(Xtr_s, ytr)
+    knn = KNeighborsClassifier().fit(Xtr_s, ytr)
+    svc = SVC(probability=True, class_weight='balanced', random_state=42).fit(Xtr_s, ytr)
+
+    # 評估各監督式模型
+    sup_models = {
+        'LR': clf2,
+        'RF': rf,
+        'GB': gb,
+        'DT': dt,
+        'KNN': knn,
+        'SVC': svc
+    }
+    sup_results = {}
+    for name, model in sup_models.items():
+        y_pred = model.predict(Xte_s)
+        sup_results[name] = {
+            'Accuracy': accuracy_score(yte, y_pred),
+            'Precision': precision_score(yte, y_pred),
+            'Recall': recall_score(yte, y_pred),
+            'F1': f1_score(yte, y_pred)
+        }
+    sup_results_df = pd.DataFrame(sup_results).T
+    print("\nSupervised Models Comparison:")
+    print(sup_results_df)
+
 # --------------------------------------------------
 # 13. Fisher Score Top10
 # --------------------------------------------------
@@ -518,9 +548,14 @@ joblib.dump(scaler, os.path.join(MODEL_DIR, 'scaler.pkl'))
 with open(os.path.join(MODEL_DIR, 'feature_order.json'), 'w', encoding='utf-8') as f:
     json.dump(list(features.columns), f)
 
-# 保存 LR 模型
+# 保存監督式模型
 if len(classes) > 1:
     joblib.dump(clf2, os.path.join(MODEL_DIR, 'lr_model.pkl'))
-    print("LR model saved successfully!")
+    joblib.dump(rf, os.path.join(MODEL_DIR, 'rf_model.pkl'))
+    joblib.dump(gb, os.path.join(MODEL_DIR, 'gb_model.pkl'))
+    joblib.dump(dt, os.path.join(MODEL_DIR, 'dt_model.pkl'))
+    joblib.dump(knn, os.path.join(MODEL_DIR, 'knn_model.pkl'))
+    joblib.dump(svc, os.path.join(MODEL_DIR, 'svc_model.pkl'))
+    print("LR, RF, GB, DT, KNN, SVC models saved successfully!")
 
 print("\nModels saved successfully!")

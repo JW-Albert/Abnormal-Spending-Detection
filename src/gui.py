@@ -22,7 +22,12 @@ models = {
     'scaler': None,
     'lof': None,
     'elliptic': None,
-    'lr': None
+    'lr': None,
+    'rf': None,
+    'gb': None,
+    'dt': None,
+    'knn': None,
+    'svc': None
 }
 
 # 儲存當日消費資料
@@ -62,10 +67,25 @@ def load_models():
         elliptic_path = os.path.join(MODEL_DIR, 'elliptic_model.pkl')
         if os.path.exists(elliptic_path):
             models['elliptic'] = joblib.load(elliptic_path)
-        # 新增 LR 載入
+        # 新增 LR 及多監督式模型載入
         lr_path = os.path.join(MODEL_DIR, 'lr_model.pkl')
         if os.path.exists(lr_path):
             models['lr'] = joblib.load(lr_path)
+        rf_path = os.path.join(MODEL_DIR, 'rf_model.pkl')
+        if os.path.exists(rf_path):
+            models['rf'] = joblib.load(rf_path)
+        gb_path = os.path.join(MODEL_DIR, 'gb_model.pkl')
+        if os.path.exists(gb_path):
+            models['gb'] = joblib.load(gb_path)
+        dt_path = os.path.join(MODEL_DIR, 'dt_model.pkl')
+        if os.path.exists(dt_path):
+            models['dt'] = joblib.load(dt_path)
+        knn_path = os.path.join(MODEL_DIR, 'knn_model.pkl')
+        if os.path.exists(knn_path):
+            models['knn'] = joblib.load(knn_path)
+        svc_path = os.path.join(MODEL_DIR, 'svc_model.pkl')
+        if os.path.exists(svc_path):
+            models['svc'] = joblib.load(svc_path)
     except Exception as e:
         print(f"Models not found or error: {e}. Please train the models first.")
 
@@ -149,6 +169,27 @@ def add_spending():
             'error': str(e)
         })
 
+@app.route('/delete_spending', methods=['POST'])
+def delete_spending():
+    try:
+        data = request.get_json()
+        idx = data.get('index')
+        if idx is not None and 0 <= idx < len(daily_spending):
+            daily_spending.pop(idx)
+            return jsonify({'success': True, 'current_spending': daily_spending})
+        else:
+            return jsonify({'success': False, 'error': '索引錯誤'})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/clear_spending', methods=['POST'])
+def clear_spending():
+    try:
+        daily_spending.clear()
+        return jsonify({'success': True, 'current_spending': daily_spending})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
 @app.route('/analyze', methods=['POST'])
 def analyze():
     try:
@@ -189,14 +230,33 @@ def analyze():
         nan_columns = list(all_features.columns[all_features.isna().any()])
         all_features = all_features.fillna(0)
         X = models['scaler'].transform(all_features)
-        # 僅做 LR 推論
+        # 多監督式模型推論
         results = {}
-        if models.get('lr') is not None:
-            results['lr'] = float(models['lr'].predict_proba(X)[0, 1])
+        votes = []
+        for name in ['lr', 'rf', 'gb', 'dt', 'knn', 'svc']:
+            model = models.get(name)
+            if model is not None:
+                prob = float(model.predict_proba(X)[0, 1])
+                results[name] = prob
+                # 以 0.5 為閾值，1=正常, 0=異常
+                votes.append(prob >= 0.5)
+        # 以 LR 為主異常判斷
+        if 'lr' in results:
             combined_score = results['lr']
             is_anomaly = combined_score < 0.5
         else:
-            return jsonify({'success': False, 'error': 'LR 模型未載入，請先訓練模型'})
+            combined_score = np.mean(list(results.values())) if results else 0
+            is_anomaly = combined_score < 0.5
+        # 多數決集成（超過三分之二同意）
+        ensemble_majority = None
+        if votes:
+            agree = sum(votes)
+            if agree > (2/3)*len(votes):
+                ensemble_majority = '正常'
+            elif (len(votes)-agree) > (2/3)*len(votes):
+                ensemble_majority = '異常'
+            else:
+                ensemble_majority = '無明顯共識'
         # 依照指定公式計算 abnormal_score
         n_locations = extra[2]
         max_price = extra[4]
@@ -212,8 +272,10 @@ def analyze():
         daily_spending.clear()
         return jsonify({
             'success': True,
-            'lr_score': combined_score,
+            'results': results,
+            'lr_score': results.get('lr'),
             'is_anomaly': bool(is_anomaly),
+            'ensemble_majority': ensemble_majority,
             'weight_warning': weight_warning,
             'abnormal_score': abnormal_score,
             'nan_columns': nan_columns,

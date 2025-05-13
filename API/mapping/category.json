@@ -1,6 +1,6 @@
 {
-  "Wine": 0,
-  "Food": 1,
+  "Food": 0,
+  "Other": 1,
   "Beverages": 2,
-  "Other": 3
+  "Wine": 3
 }
