@@ -1,0 +1,1298 @@
+﻿Date,Item,Quantity,Price,Location,Category,Location Weight,Total Daily Spending,Abnormal Score,Is Abnormal
+2025-01-01,Sake,2,60,榮耀門市,Wine,5.0,230,40,No
+2025-01-01,Rice Ball,2,60,中高站門市,Food,0.0,230,40,No
+2025-01-01,Hot Dog,1,40,北投門市,Food,4.0,230,40,No
+2025-01-01,Green Tea,1,30,冠桃園門市,Beverages,3.38,230,40,No
+2025-01-01,Juice,1,40,北投門市,Beverages,4.0,230,40,No
+2025-01-02,Beer,2,70,北投門市,Wine,4.0,400,50,No
+2025-01-02,Milk Tea,1,45,中高站門市,Beverages,0.0,400,50,No
+2025-01-02,Black Tea,2,70,北投門市,Beverages,4.0,400,50,No
+2025-01-02,Coffee,1,85,榮耀門市,Beverages,5.0,400,50,No
+2025-01-02,Whiskey,1,85,中高站門市,Wine,0.0,400,50,No
+2025-01-02,Instant Noodles,1,45,榮耀門市,Food,5.0,400,50,No
+2025-01-03,Milk Tea,2,90,冠桃園門市,Beverages,3.38,285,40,No
+2025-01-03,Beer,3,105,中高站門市,Wine,0.0,285,40,No
+2025-01-03,Sake,3,90,榮耀門市,Wine,5.0,285,40,No
+2025-01-04,Bento,1,85,中高站門市,Food,0.0,620,50,No
+2025-01-04,Milk Tea,3,135,冠桃園門市,Beverages,3.38,620,50,No
+2025-01-04,Green Tea,2,60,冠桃園門市,Beverages,3.38,620,50,No
+2025-01-04,Instant Noodles,3,135,北投門市,Food,4.0,620,50,No
+2025-01-04,Whiskey,1,85,冠桃園門市,Wine,3.38,620,50,No
+2025-01-04,Hot Dog,3,120,冠桃園門市,Food,3.38,620,50,No
+2025-01-06,Juice,2,80,豐學門市,Beverages,6.25,450,40,No
+2025-01-06,Hot Dog,3,120,豐學門市,Food,6.25,450,40,No
+2025-01-06,Rice Ball,2,60,榮耀門市,Food,5.0,450,40,No
+2025-01-06,Black Tea,3,105,冠桃園門市,Beverages,3.38,450,40,No
+2025-01-06,Whiskey,1,85,北投門市,Wine,4.0,450,40,No
+2025-01-08,Bento,2,1530,豐學門市,Food,6.25,1840,50,No
+2025-01-08,Black Tea,2,70,榮耀門市,Beverages,5.0,1840,50,No
+2025-01-08,Instant Noodles,2,90,豐學門市,Food,6.25,1840,50,No
+2025-01-08,Rice Ball,1,30,豐學門市,Food,6.25,1840,50,No
+2025-01-08,Hot Dog,3,120,豐學門市,Food,6.25,1840,50,No
+2025-01-09,Coffee,3,255,冠桃園門市,Beverages,3.38,505,40,No
+2025-01-09,Rice Ball,3,90,北投門市,Food,4.0,505,40,No
+2025-01-09,Parcel Pickup,2,70,中高站門市,Other,0.0,505,40,No
+2025-01-09,Green Tea,3,90,北投門市,Beverages,4.0,505,40,No
+2025-01-10,Coffee,1,85,中高站門市,Beverages,0.0,575,40,No
+2025-01-10,Sandwich,3,105,北投門市,Food,4.0,575,40,No
+2025-01-10,Instant Noodles,1,45,榮耀門市,Food,5.0,575,40,No
+2025-01-10,Bento,1,85,冠桃園門市,Food,3.38,575,40,No
+2025-01-10,Toiletries,3,255,中高站門市,Other,0.0,575,40,No
+2025-01-11,Hot Dog,1,40,北投門市,Food,4.0,315,0,No
+2025-01-11,Parcel Pickup,1,35,中高站門市,Other,0.0,315,0,No
+2025-01-11,Juice,3,120,中高站門市,Beverages,0.0,315,0,No
+2025-01-11,Rice Ball,3,90,北投門市,Food,4.0,315,0,No
+2025-01-11,Stationery,1,30,中高站門市,Other,0.0,315,0,No
+2025-01-12,Parcel Pickup,2,70,中高站門市,Other,0.0,560,40,No
+2025-01-12,Toiletries,3,255,中高站門市,Other,0.0,560,40,No
+2025-01-12,Hot Dog,1,40,北投門市,Food,4.0,560,40,No
+2025-01-12,Black Tea,3,105,冠桃園門市,Beverages,3.38,560,40,No
+2025-01-12,Stationery,3,90,北投門市,Other,4.0,560,40,No
+2025-01-13,Black Tea,2,70,北投門市,Beverages,4.0,310,40,No
+2025-01-13,Juice,2,80,中高站門市,Beverages,0.0,310,40,No
+2025-01-13,Beer,2,70,榮耀門市,Wine,5.0,310,40,No
+2025-01-13,Sake,3,90,冠桃園門市,Wine,3.38,310,40,No
+2025-01-14,Beer,3,105,冠桃園門市,Wine,3.38,580,40,No
+2025-01-14,Rice Ball,3,90,北投門市,Food,4.0,580,40,No
+2025-01-14,Whiskey,2,170,中高站門市,Wine,0.0,580,40,No
+2025-01-14,Instant Noodles,1,45,冠桃園門市,Food,3.38,580,40,No
+2025-01-14,Bento,2,170,豐學門市,Food,6.25,580,40,No
+2025-01-15,Sake,3,90,中高站門市,Wine,0.0,650,0,No
+2025-01-15,Coffee,2,170,中高站門市,Beverages,0.0,650,0,No
+2025-01-15,Whiskey,3,255,榮耀門市,Wine,5.0,650,0,No
+2025-01-15,Milk Tea,3,135,中高站門市,Beverages,0.0,650,0,No
+2025-01-16,Whiskey,2,170,豐學門市,Wine,6.25,360,40,No
+2025-01-16,Beer,1,35,豐學門市,Wine,6.25,360,40,No
+2025-01-16,Milk Tea,1,45,北投門市,Beverages,4.0,360,40,No
+2025-01-16,Black Tea,2,70,榮耀門市,Beverages,5.0,360,40,No
+2025-01-16,Juice,1,40,冠桃園門市,Beverages,3.38,360,40,No
+2025-01-17,Sandwich,1,35,榮耀門市,Food,5.0,230,40,No
+2025-01-17,Parcel Pickup,2,70,榮耀門市,Other,5.0,230,40,No
+2025-01-17,Rice Ball,3,90,中高站門市,Food,0.0,230,40,No
+2025-01-17,Black Tea,1,35,豐學門市,Beverages,6.25,230,40,No
+2025-01-18,Juice,1,40,榮耀門市,Beverages,5.0,435,40,No
+2025-01-18,Instant Noodles,2,90,中高站門市,Food,0.0,435,40,No
+2025-01-18,Rice Ball,1,30,榮耀門市,Food,5.0,435,40,No
+2025-01-18,Coffee,2,170,冠桃園門市,Beverages,3.38,435,40,No
+2025-01-18,Parcel Pickup,3,105,豐學門市,Other,6.25,435,40,No
+2025-01-19,Instant Noodles,1,45,中高站門市,Food,0.0,630,50,No
+2025-01-19,Bento,3,255,冠桃園門市,Food,3.38,630,50,No
+2025-01-19,Coffee,2,170,北投門市,Beverages,4.0,630,50,No
+2025-01-19,Sake,1,30,中高站門市,Wine,0.0,630,50,No
+2025-01-19,Rice Ball,2,60,冠桃園門市,Food,3.38,630,50,No
+2025-01-19,Parcel Pickup,2,70,冠桃園門市,Other,3.38,630,50,No
+2025-01-20,Beer,1,35,中高站門市,Wine,0.0,470,50,No
+2025-01-20,Sandwich,3,105,冠桃園門市,Food,3.38,470,50,No
+2025-01-20,Rice Ball,3,90,豐學門市,Food,6.25,470,50,No
+2025-01-20,Milk Tea,2,90,中高站門市,Beverages,0.0,470,50,No
+2025-01-20,Juice,3,120,冠桃園門市,Beverages,3.38,470,50,No
+2025-01-20,Green Tea,1,30,冠桃園門市,Beverages,3.38,470,50,No
+2025-01-21,Stationery,2,60,冠桃園門市,Other,3.38,265,40,No
+2025-01-21,Milk Tea,1,45,榮耀門市,Beverages,5.0,265,40,No
+2025-01-21,Sandwich,2,70,中高站門市,Food,0.0,265,40,No
+2025-01-21,Rice Ball,3,90,中高站門市,Food,0.0,265,40,No
+2025-01-22,Instant Noodles,3,135,豐學門市,Food,6.25,685,50,No
+2025-01-22,Beer,1,35,中高站門市,Wine,0.0,685,50,No
+2025-01-22,Hot Dog,3,120,豐學門市,Food,6.25,685,50,No
+2025-01-22,Parcel Pickup,1,35,冠桃園門市,Other,3.38,685,50,No
+2025-01-22,Sandwich,3,105,榮耀門市,Food,5.0,685,50,No
+2025-01-22,Toiletries,3,255,北投門市,Other,4.0,685,50,No
+2025-01-23,Whiskey,3,255,豐學門市,Wine,6.25,585,40,No
+2025-01-23,Toiletries,2,170,榮耀門市,Other,5.0,585,40,No
+2025-01-23,Hot Dog,1,40,中高站門市,Food,0.0,585,40,No
+2025-01-23,Juice,3,120,冠桃園門市,Beverages,3.38,585,40,No
+2025-01-24,Beer,3,105,冠桃園門市,Wine,3.38,480,40,No
+2025-01-24,Milk Tea,3,135,中高站門市,Beverages,0.0,480,40,No
+2025-01-24,Parcel Pickup,2,70,豐學門市,Other,6.25,480,40,No
+2025-01-24,Bento,2,170,冠桃園門市,Food,3.38,480,40,No
+2025-01-25,Beer,3,105,北投門市,Wine,4.0,545,50,No
+2025-01-25,Instant Noodles,2,90,榮耀門市,Food,5.0,545,50,No
+2025-01-25,Black Tea,2,70,豐學門市,Beverages,6.25,545,50,No
+2025-01-25,Hot Dog,3,120,榮耀門市,Food,5.0,545,50,No
+2025-01-25,Parcel Pickup,2,70,榮耀門市,Other,5.0,545,50,No
+2025-01-25,Rice Ball,3,90,中高站門市,Food,0.0,545,50,No
+2025-01-27,Instant Noodles,2,630,北投門市,Food,4.0,845,20,No
+2025-01-27,Sake,2,60,北投門市,Wine,4.0,845,20,No
+2025-01-27,Parcel Pickup,2,70,豐學門市,Other,6.25,845,20,No
+2025-01-27,Toiletries,1,85,北投門市,Other,4.0,845,20,No
+2025-01-28,Sake,2,60,冠桃園門市,Wine,3.38,615,0,No
+2025-01-28,Toiletries,3,255,中高站門市,Other,0.0,615,0,No
+2025-01-28,Rice Ball,1,300,中高站門市,Food,0.0,615,0,No
+2025-01-29,Toiletries,3,255,冠桃園門市,Other,3.38,500,40,No
+2025-01-29,Rice Ball,1,30,中高站門市,Food,0.0,500,40,No
+2025-01-29,Sandwich,2,70,榮耀門市,Food,5.0,500,40,No
+2025-01-29,Parcel Pickup,3,105,榮耀門市,Other,5.0,500,40,No
+2025-01-29,Hot Dog,1,40,榮耀門市,Food,5.0,500,40,No
+2025-01-30,Whiskey,2,170,冠桃園門市,Wine,3.38,1095,20,No
+2025-01-30,Toiletries,2,170,榮耀門市,Other,5.0,1095,20,No
+2025-01-30,Juice,2,720,冠桃園門市,Beverages,3.38,1095,20,No
+2025-01-30,Black Tea,1,35,冠桃園門市,Beverages,3.38,1095,20,No
+2025-02-01,Toiletries,2,170,榮耀門市,Other,5.0,310,40,No
+2025-02-01,Juice,2,80,北投門市,Beverages,4.0,310,40,No
+2025-02-01,Green Tea,2,60,中高站門市,Beverages,0.0,310,40,No
+2025-02-02,Rice Ball,1,30,豐學門市,Food,6.25,690,50,No
+2025-02-02,Whiskey,1,85,榮耀門市,Wine,5.0,690,50,No
+2025-02-02,Milk Tea,3,135,北投門市,Beverages,4.0,690,50,No
+2025-02-02,Coffee,3,255,榮耀門市,Beverages,5.0,690,50,No
+2025-02-02,Black Tea,3,105,豐學門市,Beverages,6.25,690,50,No
+2025-02-02,Hot Dog,2,80,北投門市,Food,4.0,690,50,No
+2025-02-03,Parcel Pickup,2,70,北投門市,Other,4.0,590,40,No
+2025-02-03,Whiskey,1,85,榮耀門市,Wine,5.0,590,40,No
+2025-02-03,Coffee,3,255,中高站門市,Beverages,0.0,590,40,No
+2025-02-03,Rice Ball,2,60,冠桃園門市,Food,3.38,590,40,No
+2025-02-03,Juice,3,120,北投門市,Beverages,4.0,590,40,No
+2025-02-04,Instant Noodles,3,135,榮耀門市,Food,5.0,425,40,No
+2025-02-04,Parcel Pickup,1,35,冠桃園門市,Other,3.38,425,40,No
+2025-02-04,Milk Tea,3,135,冠桃園門市,Beverages,3.38,425,40,No
+2025-02-04,Coffee,1,85,中高站門市,Beverages,0.0,425,40,No
+2025-02-04,Sandwich,1,35,榮耀門市,Food,5.0,425,40,No
+2025-02-05,Hot Dog,1,40,豐學門市,Food,6.25,165,0,No
+2025-02-05,Bento,1,85,榮耀門市,Food,5.0,165,0,No
+2025-02-05,Juice,1,40,榮耀門市,Beverages,5.0,165,0,No
+2025-02-06,Whiskey,1,85,冠桃園門市,Wine,3.38,550,0,No
+2025-02-06,Black Tea,3,105,北投門市,Beverages,4.0,550,0,No
+2025-02-06,Instant Noodles,1,360,冠桃園門市,Food,3.38,550,0,No
+2025-02-07,Coffee,3,255,北投門市,Beverages,4.0,595,0,No
+2025-02-07,Toiletries,2,170,豐學門市,Other,6.25,595,0,No
+2025-02-07,Whiskey,2,170,豐學門市,Wine,6.25,595,0,No
+2025-02-08,Hot Dog,2,80,榮耀門市,Food,5.0,285,40,No
+2025-02-08,Instant Noodles,3,135,中高站門市,Food,0.0,285,40,No
+2025-02-08,Parcel Pickup,2,70,豐學門市,Other,6.25,285,40,No
+2025-02-09,Toiletries,3,255,豐學門市,Other,6.25,795,40,No
+2025-02-09,Bento,3,255,豐學門市,Food,6.25,795,40,No
+2025-02-09,Rice Ball,2,60,冠桃園門市,Food,3.38,795,40,No
+2025-02-09,Instant Noodles,3,135,豐學門市,Food,6.25,795,40,No
+2025-02-09,Green Tea,3,90,榮耀門市,Beverages,5.0,795,40,No
+2025-02-10,Juice,2,80,中高站門市,Beverages,0.0,385,40,No
+2025-02-10,Rice Ball,1,30,冠桃園門市,Food,3.38,385,40,No
+2025-02-10,Sandwich,2,70,中高站門市,Food,0.0,385,40,No
+2025-02-10,Instant Noodles,3,135,北投門市,Food,4.0,385,40,No
+2025-02-10,Beer,2,70,豐學門市,Wine,6.25,385,40,No
+2025-02-11,Sandwich,3,945,豐學門市,Food,6.25,1105,20,No
+2025-02-11,Green Tea,3,90,北投門市,Beverages,4.0,1105,20,No
+2025-02-11,Beer,2,70,豐學門市,Wine,6.25,1105,20,No
+2025-02-12,Stationery,1,30,北投門市,Other,4.0,310,50,No
+2025-02-12,Beer,1,35,榮耀門市,Wine,5.0,310,50,No
+2025-02-12,Hot Dog,2,80,冠桃園門市,Food,3.38,310,50,No
+2025-02-12,Rice Ball,1,30,豐學門市,Food,6.25,310,50,No
+2025-02-12,Sandwich,3,105,豐學門市,Food,6.25,310,50,No
+2025-02-12,Green Tea,1,30,冠桃園門市,Beverages,3.38,310,50,No
+2025-02-13,Green Tea,3,90,北投門市,Beverages,4.0,480,40,No
+2025-02-13,Bento,3,255,豐學門市,Food,6.25,480,40,No
+2025-02-13,Beer,3,105,豐學門市,Wine,6.25,480,40,No
+2025-02-13,Rice Ball,1,30,榮耀門市,Food,5.0,480,40,No
+2025-02-14,Coffee,3,255,冠桃園門市,Beverages,3.38,420,40,No
+2025-02-14,Instant Noodles,1,45,榮耀門市,Food,5.0,420,40,No
+2025-02-14,Stationery,2,60,中高站門市,Other,0.0,420,40,No
+2025-02-14,Sake,2,60,榮耀門市,Wine,5.0,420,40,No
+2025-02-15,Parcel Pickup,2,70,豐學門市,Other,6.25,450,40,No
+2025-02-15,Whiskey,3,255,豐學門市,Wine,6.25,450,40,No
+2025-02-15,Black Tea,1,35,中高站門市,Beverages,0.0,450,40,No
+2025-02-15,Milk Tea,2,90,北投門市,Beverages,4.0,450,40,No
+2025-02-16,Black Tea,2,70,冠桃園門市,Beverages,3.38,220,40,No
+2025-02-16,Green Tea,3,90,中高站門市,Beverages,0.0,220,40,No
+2025-02-16,Rice Ball,2,60,豐學門市,Food,6.25,220,40,No
+2025-02-17,Parcel Pickup,1,35,北投門市,Other,4.0,220,0,No
+2025-02-17,Sandwich,3,105,中高站門市,Food,0.0,220,0,No
+2025-02-17,Hot Dog,2,80,中高站門市,Food,0.0,220,0,No
+2025-02-18,Bento,3,255,榮耀門市,Food,5.0,475,40,No
+2025-02-18,Rice Ball,1,30,冠桃園門市,Food,3.38,475,40,No
+2025-02-18,Instant Noodles,2,90,冠桃園門市,Food,3.38,475,40,No
+2025-02-18,Sake,1,30,北投門市,Wine,4.0,475,40,No
+2025-02-18,Sandwich,2,70,冠桃園門市,Food,3.38,475,40,No
+2025-02-20,Black Tea,2,70,北投門市,Beverages,4.0,230,0,No
+2025-02-20,Beer,2,70,北投門市,Wine,4.0,230,0,No
+2025-02-20,Milk Tea,2,90,冠桃園門市,Beverages,3.38,230,0,No
+2025-02-21,Milk Tea,1,45,中高站門市,Beverages,0.0,330,50,No
+2025-02-21,Coffee,1,85,北投門市,Beverages,4.0,330,50,No
+2025-02-21,Rice Ball,1,30,豐學門市,Food,6.25,330,50,No
+2025-02-21,Parcel Pickup,3,105,豐學門市,Other,6.25,330,50,No
+2025-02-21,Black Tea,1,35,中高站門市,Beverages,0.0,330,50,No
+2025-02-21,Green Tea,1,30,冠桃園門市,Beverages,3.38,330,50,No
+2025-02-22,Green Tea,3,90,中高站門市,Beverages,0.0,525,40,No
+2025-02-22,Bento,3,255,豐學門市,Food,6.25,525,40,No
+2025-02-22,Stationery,1,30,中高站門市,Other,0.0,525,40,No
+2025-02-22,Juice,2,80,北投門市,Beverages,4.0,525,40,No
+2025-02-22,Black Tea,2,70,北投門市,Beverages,4.0,525,40,No
+2025-02-23,Rice Ball,1,30,豐學門市,Food,6.25,465,40,No
+2025-02-23,Sandwich,3,105,中高站門市,Food,0.0,465,40,No
+2025-02-23,Toiletries,2,170,豐學門市,Other,6.25,465,40,No
+2025-02-23,Beer,2,70,冠桃園門市,Wine,3.38,465,40,No
+2025-02-23,Sake,3,90,豐學門市,Wine,6.25,465,40,No
+2025-02-24,Whiskey,3,255,榮耀門市,Wine,5.0,565,0,No
+2025-02-24,Milk Tea,3,135,榮耀門市,Beverages,5.0,565,0,No
+2025-02-24,Black Tea,3,105,榮耀門市,Beverages,5.0,565,0,No
+2025-02-24,Beer,2,70,冠桃園門市,Wine,3.38,565,0,No
+2025-02-25,Hot Dog,3,120,北投門市,Food,4.0,485,0,No
+2025-02-25,Sandwich,2,70,豐學門市,Food,6.25,485,0,No
+2025-02-25,Black Tea,2,70,北投門市,Beverages,4.0,485,0,No
+2025-02-25,Green Tea,3,90,北投門市,Beverages,4.0,485,0,No
+2025-02-25,Instant Noodles,3,135,豐學門市,Food,6.25,485,0,No
+2025-02-26,Whiskey,2,170,中高站門市,Wine,0.0,605,40,No
+2025-02-26,Instant Noodles,1,45,豐學門市,Food,6.25,605,40,No
+2025-02-26,Milk Tea,3,135,中高站門市,Beverages,0.0,605,40,No
+2025-02-26,Coffee,3,255,北投門市,Beverages,4.0,605,40,No
+2025-02-27,Bento,2,170,榮耀門市,Food,5.0,375,40,No
+2025-02-27,Sake,1,30,北投門市,Wine,4.0,375,40,No
+2025-02-27,Coffee,1,85,冠桃園門市,Beverages,3.38,375,40,No
+2025-02-27,Green Tea,3,90,冠桃園門市,Beverages,3.38,375,40,No
+2025-02-28,Sandwich,2,70,中高站門市,Food,0.0,295,40,No
+2025-02-28,Milk Tea,3,135,榮耀門市,Beverages,5.0,295,40,No
+2025-02-28,Sake,3,90,豐學門市,Wine,6.25,295,40,No
+2025-03-01,Hot Dog,2,80,中高站門市,Food,0.0,375,0,No
+2025-03-01,Juice,1,40,中高站門市,Beverages,0.0,375,0,No
+2025-03-01,Whiskey,1,85,榮耀門市,Wine,5.0,375,0,No
+2025-03-01,Bento,2,170,榮耀門市,Food,5.0,375,0,No
+2025-03-02,Parcel Pickup,3,105,中高站門市,Other,0.0,380,40,No
+2025-03-02,Beer,3,105,榮耀門市,Wine,5.0,380,40,No
+2025-03-02,Coffee,2,170,北投門市,Beverages,4.0,380,40,No
+2025-03-04,Bento,3,255,冠桃園門市,Food,3.38,1415,20,No
+2025-03-04,Juice,3,600,中高站門市,Beverages,0.0,1415,20,No
+2025-03-04,Beer,2,560,中高站門市,Wine,0.0,1415,20,No
+2025-03-05,Rice Ball,1,30,中高站門市,Food,0.0,375,50,No
+2025-03-05,Sake,1,30,冠桃園門市,Wine,3.38,375,50,No
+2025-03-05,Hot Dog,2,80,北投門市,Food,4.0,375,50,No
+2025-03-05,Bento,2,170,榮耀門市,Food,5.0,375,50,No
+2025-03-05,Sandwich,1,35,冠桃園門市,Food,3.38,375,50,No
+2025-03-05,Green Tea,1,30,北投門市,Beverages,4.0,375,50,No
+2025-03-07,Beer,1,35,冠桃園門市,Wine,3.38,380,40,No
+2025-03-07,Juice,1,40,中高站門市,Beverages,0.0,380,40,No
+2025-03-07,Instant Noodles,3,135,豐學門市,Food,6.25,380,40,No
+2025-03-07,Rice Ball,3,90,冠桃園門市,Food,3.38,380,40,No
+2025-03-07,Hot Dog,2,80,中高站門市,Food,0.0,380,40,No
+2025-03-08,Milk Tea,2,90,冠桃園門市,Beverages,3.38,465,40,No
+2025-03-08,Parcel Pickup,3,105,冠桃園門市,Other,3.38,465,40,No
+2025-03-08,Juice,3,120,豐學門市,Beverages,6.25,465,40,No
+2025-03-08,Hot Dog,2,80,豐學門市,Food,6.25,465,40,No
+2025-03-08,Beer,2,70,中高站門市,Wine,0.0,465,40,No
+2025-03-09,Rice Ball,3,90,北投門市,Food,4.0,330,0,No
+2025-03-09,Bento,2,170,北投門市,Food,4.0,330,0,No
+2025-03-09,Beer,2,70,榮耀門市,Wine,5.0,330,0,No
+2025-03-10,Black Tea,2,70,冠桃園門市,Beverages,3.38,330,40,No
+2025-03-10,Rice Ball,3,90,中高站門市,Food,0.0,330,40,No
+2025-03-10,Bento,2,170,榮耀門市,Food,5.0,330,40,No
+2025-03-11,Rice Ball,1,30,北投門市,Food,4.0,400,0,No
+2025-03-11,Milk Tea,3,135,中高站門市,Beverages,0.0,400,0,No
+2025-03-11,Juice,3,120,中高站門市,Beverages,0.0,400,0,No
+2025-03-11,Whiskey,1,85,中高站門市,Wine,0.0,400,0,No
+2025-03-11,Stationery,1,30,北投門市,Other,4.0,400,0,No
+2025-03-12,Milk Tea,3,135,中高站門市,Beverages,0.0,300,0,No
+2025-03-12,Black Tea,3,105,榮耀門市,Beverages,5.0,300,0,No
+2025-03-12,Rice Ball,2,60,榮耀門市,Food,5.0,300,0,No
+2025-03-13,Toiletries,1,85,豐學門市,Other,6.25,145,40,No
+2025-03-13,Stationery,1,30,榮耀門市,Other,5.0,145,40,No
+2025-03-13,Rice Ball,1,30,中高站門市,Food,0.0,145,40,No
+2025-03-14,Green Tea,2,60,豐學門市,Beverages,6.25,400,50,No
+2025-03-14,Rice Ball,1,30,中高站門市,Food,0.0,400,50,No
+2025-03-14,Stationery,2,60,中高站門市,Other,0.0,400,50,No
+2025-03-14,Milk Tea,2,90,榮耀門市,Beverages,5.0,400,50,No
+2025-03-14,Instant Noodles,2,90,冠桃園門市,Food,3.38,400,50,No
+2025-03-14,Beer,2,70,中高站門市,Wine,0.0,400,50,No
+2025-03-17,Bento,3,255,中高站門市,Food,0.0,580,0,No
+2025-03-17,Whiskey,3,255,中高站門市,Wine,0.0,580,0,No
+2025-03-17,Black Tea,2,70,豐學門市,Beverages,6.25,580,0,No
+2025-03-18,Instant Noodles,2,90,冠桃園門市,Food,3.38,235,40,No
+2025-03-18,Juice,1,40,中高站門市,Beverages,0.0,235,40,No
+2025-03-18,Parcel Pickup,3,105,榮耀門市,Other,5.0,235,40,No
+2025-03-19,Juice,1,40,榮耀門市,Beverages,5.0,280,0,No
+2025-03-19,Sandwich,2,70,中高站門市,Food,0.0,280,0,No
+2025-03-19,Bento,2,170,榮耀門市,Food,5.0,280,0,No
+2025-03-20,Green Tea,3,90,豐學門市,Beverages,6.25,235,40,No
+2025-03-20,Whiskey,1,85,中高站門市,Wine,0.0,235,40,No
+2025-03-20,Stationery,2,60,榮耀門市,Other,5.0,235,40,No
+2025-03-21,Hot Dog,1,40,榮耀門市,Food,5.0,640,50,No
+2025-03-21,Stationery,2,60,榮耀門市,Other,5.0,640,50,No
+2025-03-21,Beer,2,70,中高站門市,Wine,0.0,640,50,No
+2025-03-21,Sandwich,1,245,豐學門市,Food,6.25,640,50,No
+2025-03-21,Milk Tea,3,135,中高站門市,Beverages,0.0,640,50,No
+2025-03-21,Instant Noodles,2,90,冠桃園門市,Food,3.38,640,50,No
+2025-03-22,Green Tea,3,90,中高站門市,Beverages,0.0,715,50,No
+2025-03-22,Bento,2,170,北投門市,Food,4.0,715,50,No
+2025-03-22,Beer,1,35,冠桃園門市,Wine,3.38,715,50,No
+2025-03-22,Hot Dog,2,80,中高站門市,Food,0.0,715,50,No
+2025-03-22,Coffee,1,85,榮耀門市,Beverages,5.0,715,50,No
+2025-03-22,Whiskey,3,255,北投門市,Wine,4.0,715,50,No
+2025-03-23,Coffee,2,170,北投門市,Beverages,4.0,655,50,No
+2025-03-23,Juice,2,80,中高站門市,Beverages,0.0,655,50,No
+2025-03-23,Rice Ball,2,60,豐學門市,Food,6.25,655,50,No
+2025-03-23,Whiskey,3,255,榮耀門市,Wine,5.0,655,50,No
+2025-03-23,Stationery,2,60,北投門市,Other,4.0,655,50,No
+2025-03-23,Sake,1,30,豐學門市,Wine,6.25,655,50,No
+2025-03-24,Black Tea,2,70,豐學門市,Beverages,6.25,710,50,No
+2025-03-24,Whiskey,3,255,榮耀門市,Wine,5.0,710,50,No
+2025-03-24,Hot Dog,1,40,北投門市,Food,4.0,710,50,No
+2025-03-24,Green Tea,3,90,中高站門市,Beverages,0.0,710,50,No
+2025-03-24,Instant Noodles,3,135,北投門市,Food,4.0,710,50,No
+2025-03-24,Juice,3,120,豐學門市,Beverages,6.25,710,50,No
+2025-03-25,Sake,1,30,北投門市,Wine,4.0,385,40,No
+2025-03-25,Instant Noodles,3,135,豐學門市,Food,6.25,385,40,No
+2025-03-25,Milk Tea,2,90,豐學門市,Beverages,6.25,385,40,No
+2025-03-25,Hot Dog,1,40,豐學門市,Food,6.25,385,40,No
+2025-03-25,Green Tea,3,90,中高站門市,Beverages,0.0,385,40,No
+2025-03-27,Stationery,3,90,北投門市,Other,4.0,520,40,No
+2025-03-27,Toiletries,3,255,中高站門市,Other,0.0,520,40,No
+2025-03-27,Sake,1,30,冠桃園門市,Wine,3.38,520,40,No
+2025-03-27,Green Tea,2,60,豐學門市,Beverages,6.25,520,40,No
+2025-03-27,Bento,1,85,冠桃園門市,Food,3.38,520,40,No
+2025-03-28,Milk Tea,2,90,中高站門市,Beverages,0.0,640,50,No
+2025-03-28,Toiletries,3,255,豐學門市,Other,6.25,640,50,No
+2025-03-28,Stationery,3,90,北投門市,Other,4.0,640,50,No
+2025-03-28,Hot Dog,2,80,榮耀門市,Food,5.0,640,50,No
+2025-03-28,Green Tea,3,90,冠桃園門市,Beverages,3.38,640,50,No
+2025-03-28,Black Tea,1,35,北投門市,Beverages,4.0,640,50,No
+2025-03-30,Toiletries,1,85,冠桃園門市,Other,3.38,765,50,No
+2025-03-30,Bento,2,170,冠桃園門市,Food,3.38,765,50,No
+2025-03-30,Parcel Pickup,2,70,榮耀門市,Other,5.0,765,50,No
+2025-03-30,Coffee,3,255,北投門市,Beverages,4.0,765,50,No
+2025-03-30,Juice,2,80,豐學門市,Beverages,6.25,765,50,No
+2025-03-30,Beer,3,105,北投門市,Wine,4.0,765,50,No
+2025-03-31,Instant Noodles,2,90,冠桃園門市,Food,3.38,455,40,No
+2025-03-31,Coffee,3,255,冠桃園門市,Beverages,3.38,455,40,No
+2025-03-31,Sandwich,2,70,中高站門市,Food,0.0,455,40,No
+2025-03-31,Hot Dog,1,40,北投門市,Food,4.0,455,40,No
+2025-04-01,Black Tea,1,35,中高站門市,Beverages,0.0,460,50,No
+2025-04-01,Sake,1,30,北投門市,Wine,4.0,460,50,No
+2025-04-01,Rice Ball,1,30,榮耀門市,Food,5.0,460,50,No
+2025-04-01,Stationery,3,90,北投門市,Other,4.0,460,50,No
+2025-04-01,Bento,2,170,冠桃園門市,Food,3.38,460,50,No
+2025-04-01,Sandwich,3,105,冠桃園門市,Food,3.38,460,50,No
+2025-04-02,Juice,3,120,中高站門市,Beverages,0.0,570,0,No
+2025-04-02,Rice Ball,3,90,中高站門市,Food,0.0,570,0,No
+2025-04-02,Coffee,3,255,中高站門市,Beverages,0.0,570,0,No
+2025-04-02,Sandwich,3,105,北投門市,Food,4.0,570,0,No
+2025-04-03,Sake,3,90,中高站門市,Wine,0.0,285,0,No
+2025-04-03,Instant Noodles,2,90,榮耀門市,Food,5.0,285,0,No
+2025-04-03,Parcel Pickup,3,105,榮耀門市,Other,5.0,285,0,No
+2025-04-04,Hot Dog,3,120,榮耀門市,Food,5.0,305,0,No
+2025-04-04,Toiletries,1,85,中高站門市,Other,0.0,305,0,No
+2025-04-04,Sandwich,2,70,榮耀門市,Food,5.0,305,0,No
+2025-04-04,Rice Ball,1,30,榮耀門市,Food,5.0,305,0,No
+2025-04-05,Parcel Pickup,3,105,榮耀門市,Other,5.0,585,40,No
+2025-04-05,Toiletries,3,255,中高站門市,Other,0.0,585,40,No
+2025-04-05,Milk Tea,3,135,冠桃園門市,Beverages,3.38,585,40,No
+2025-04-05,Green Tea,3,90,榮耀門市,Beverages,5.0,585,40,No
+2025-04-06,Whiskey,1,595,北投門市,Wine,4.0,745,0,No
+2025-04-06,Instant Noodles,2,90,中高站門市,Food,0.0,745,0,No
+2025-04-06,Stationery,2,60,中高站門市,Other,0.0,745,0,No
+2025-04-07,Parcel Pickup,2,350,冠桃園門市,Other,3.38,520,0,No
+2025-04-07,Stationery,3,90,榮耀門市,Other,5.0,520,0,No
+2025-04-07,Hot Dog,2,80,榮耀門市,Food,5.0,520,0,No
+2025-04-08,Parcel Pickup,1,35,北投門市,Other,4.0,250,40,No
+2025-04-08,Beer,3,105,北投門市,Wine,4.0,250,40,No
+2025-04-08,Hot Dog,1,40,中高站門市,Food,0.0,250,40,No
+2025-04-08,Rice Ball,1,30,冠桃園門市,Food,3.38,250,40,No
+2025-04-08,Juice,1,40,中高站門市,Beverages,0.0,250,40,No
+2025-04-09,Sandwich,3,105,北投門市,Food,4.0,520,50,No
+2025-04-09,Sake,1,30,北投門市,Wine,4.0,520,50,No
+2025-04-09,Instant Noodles,3,135,北投門市,Food,4.0,520,50,No
+2025-04-09,Milk Tea,2,90,榮耀門市,Beverages,5.0,520,50,No
+2025-04-09,Hot Dog,2,80,中高站門市,Food,0.0,520,50,No
+2025-04-09,Juice,2,80,榮耀門市,Beverages,5.0,520,50,No
+2025-04-10,Parcel Pickup,3,105,冠桃園門市,Other,3.38,380,40,No
+2025-04-10,Rice Ball,2,60,中高站門市,Food,0.0,380,40,No
+2025-04-10,Hot Dog,2,80,榮耀門市,Food,5.0,380,40,No
+2025-04-10,Instant Noodles,3,135,冠桃園門市,Food,3.38,380,40,No
+2025-04-11,Parcel Pickup,3,105,豐學門市,Other,6.25,445,40,No
+2025-04-11,Whiskey,2,170,北投門市,Wine,4.0,445,40,No
+2025-04-11,Juice,2,80,冠桃園門市,Beverages,3.38,445,40,No
+2025-04-11,Milk Tea,2,90,中高站門市,Beverages,0.0,445,40,No
+2025-04-12,Black Tea,2,70,豐學門市,Beverages,6.25,445,40,No
+2025-04-12,Juice,3,120,冠桃園門市,Beverages,3.38,445,40,No
+2025-04-12,Bento,3,255,榮耀門市,Food,5.0,445,40,No
+2025-04-14,Stationery,1,30,北投門市,Other,4.0,665,50,No
+2025-04-14,Coffee,2,170,豐學門市,Beverages,6.25,665,50,No
+2025-04-14,Hot Dog,3,120,北投門市,Food,4.0,665,50,No
+2025-04-14,Beer,2,70,冠桃園門市,Wine,3.38,665,50,No
+2025-04-14,Whiskey,2,170,中高站門市,Wine,0.0,665,50,No
+2025-04-14,Parcel Pickup,3,105,冠桃園門市,Other,3.38,665,50,No
+2025-04-15,Hot Dog,2,80,中高站門市,Food,0.0,1735,50,No
+2025-04-15,Whiskey,1,85,豐學門市,Wine,6.25,1735,50,No
+2025-04-15,Toiletries,2,1530,中高站門市,Other,0.0,1735,50,No
+2025-04-15,Juice,1,40,豐學門市,Beverages,6.25,1735,50,No
+2025-04-16,Toiletries,1,85,北投門市,Other,4.0,175,0,No
+2025-04-16,Stationery,1,30,北投門市,Other,4.0,175,0,No
+2025-04-16,Rice Ball,2,60,中高站門市,Food,0.0,175,0,No
+2025-04-17,Sandwich,3,105,冠桃園門市,Food,3.38,235,0,No
+2025-04-17,Sake,2,60,中高站門市,Wine,0.0,235,0,No
+2025-04-17,Beer,2,70,冠桃園門市,Wine,3.38,235,0,No
+2025-04-18,Coffee,2,170,豐學門市,Beverages,6.25,485,40,No
+2025-04-18,Toiletries,3,255,中高站門市,Other,0.0,485,40,No
+2025-04-18,Green Tea,1,30,冠桃園門市,Beverages,3.38,485,40,No
+2025-04-18,Sake,1,30,冠桃園門市,Wine,3.38,485,40,No
+2025-04-20,Black Tea,2,70,中高站門市,Beverages,0.0,520,40,No
+2025-04-20,Sandwich,3,105,榮耀門市,Food,5.0,520,40,No
+2025-04-20,Instant Noodles,2,90,冠桃園門市,Food,3.38,520,40,No
+2025-04-20,Coffee,3,255,中高站門市,Beverages,0.0,520,40,No
+2025-04-21,Stationery,1,30,豐學門市,Other,6.25,220,40,No
+2025-04-21,Bento,1,85,北投門市,Food,4.0,220,40,No
+2025-04-21,Sandwich,3,105,中高站門市,Food,0.0,220,40,No
+2025-04-23,Black Tea,2,70,北投門市,Beverages,4.0,195,0,No
+2025-04-23,Bento,1,85,北投門市,Food,4.0,195,0,No
+2025-04-23,Hot Dog,1,40,北投門市,Food,4.0,195,0,No
+2025-04-24,Sandwich,1,35,豐學門市,Food,6.25,585,40,No
+2025-04-24,Coffee,3,255,中高站門市,Beverages,0.0,585,40,No
+2025-04-24,Instant Noodles,3,135,冠桃園門市,Food,3.38,585,40,No
+2025-04-24,Sake,3,90,中高站門市,Wine,0.0,585,40,No
+2025-04-24,Black Tea,2,70,北投門市,Beverages,4.0,585,40,No
+2025-04-25,Bento,1,85,中高站門市,Food,0.0,500,0,No
+2025-04-25,Beer,2,70,北投門市,Wine,4.0,500,0,No
+2025-04-25,Coffee,3,255,北投門市,Beverages,4.0,500,0,No
+2025-04-25,Stationery,3,90,北投門市,Other,4.0,500,0,No
+2025-04-26,Milk Tea,3,135,榮耀門市,Beverages,5.0,475,40,No
+2025-04-26,Juice,2,80,北投門市,Beverages,4.0,475,40,No
+2025-04-26,Green Tea,3,90,豐學門市,Beverages,6.25,475,40,No
+2025-04-26,Coffee,1,85,北投門市,Beverages,4.0,475,40,No
+2025-04-26,Bento,1,85,冠桃園門市,Food,3.38,475,40,No
+2025-04-27,Sake,3,90,豐學門市,Wine,6.25,580,40,No
+2025-04-27,Juice,1,40,榮耀門市,Beverages,5.0,580,40,No
+2025-04-27,Milk Tea,2,90,榮耀門市,Beverages,5.0,580,40,No
+2025-04-27,Sandwich,3,105,中高站門市,Food,0.0,580,40,No
+2025-04-27,Whiskey,3,255,豐學門市,Wine,6.25,580,40,No
+2025-04-28,Toiletries,2,170,北投門市,Other,4.0,645,40,No
+2025-04-28,Green Tea,2,300,冠桃園門市,Beverages,3.38,645,40,No
+2025-04-28,Hot Dog,2,80,榮耀門市,Food,5.0,645,40,No
+2025-04-28,Stationery,2,60,中高站門市,Other,0.0,645,40,No
+2025-04-28,Black Tea,1,35,北投門市,Beverages,4.0,645,40,No
+2025-04-29,Parcel Pickup,1,35,冠桃園門市,Other,3.38,380,0,No
+2025-04-29,Black Tea,3,105,冠桃園門市,Beverages,3.38,380,0,No
+2025-04-29,Rice Ball,1,240,中高站門市,Food,0.0,380,0,No
+2025-04-30,Sandwich,2,70,北投門市,Food,4.0,425,0,No
+2025-04-30,Hot Dog,2,80,北投門市,Food,4.0,425,0,No
+2025-04-30,Parcel Pickup,3,105,榮耀門市,Other,5.0,425,0,No
+2025-04-30,Bento,2,170,榮耀門市,Food,5.0,425,0,No
+2025-05-01,Stationery,1,30,榮耀門市,Other,5.0,410,0,No
+2025-05-01,Toiletries,3,255,榮耀門市,Other,5.0,410,0,No
+2025-05-01,Beer,1,35,冠桃園門市,Wine,3.38,410,0,No
+2025-05-01,Milk Tea,2,90,榮耀門市,Beverages,5.0,410,0,No
+2025-05-02,Green Tea,2,60,豐學門市,Beverages,6.25,215,0,No
+2025-05-02,Bento,1,85,豐學門市,Food,6.25,215,0,No
+2025-05-02,Parcel Pickup,2,70,北投門市,Other,4.0,215,0,No
+2025-05-03,Coffee,3,255,冠桃園門市,Beverages,3.38,690,40,No
+2025-05-03,Bento,3,255,豐學門市,Food,6.25,690,40,No
+2025-05-03,Hot Dog,3,120,豐學門市,Food,6.25,690,40,No
+2025-05-03,Sake,2,60,北投門市,Wine,4.0,690,40,No
+2025-05-04,Whiskey,2,850,豐學門市,Wine,6.25,1035,20,No
+2025-05-04,Black Tea,2,70,豐學門市,Beverages,6.25,1035,20,No
+2025-05-04,Sake,1,30,豐學門市,Wine,6.25,1035,20,No
+2025-05-04,Toiletries,1,85,豐學門市,Other,6.25,1035,20,No
+2025-05-05,Stationery,3,90,豐學門市,Other,6.25,770,40,No
+2025-05-05,Parcel Pickup,1,35,榮耀門市,Other,5.0,770,40,No
+2025-05-05,Milk Tea,3,135,豐學門市,Beverages,6.25,770,40,No
+2025-05-05,Coffee,1,510,冠桃園門市,Beverages,3.38,770,40,No
+2025-05-06,Toiletries,2,170,冠桃園門市,Other,3.38,465,50,No
+2025-05-06,Green Tea,1,30,中高站門市,Beverages,0.0,465,50,No
+2025-05-06,Sandwich,3,105,北投門市,Food,4.0,465,50,No
+2025-05-06,Milk Tea,1,45,榮耀門市,Beverages,5.0,465,50,No
+2025-05-06,Parcel Pickup,1,35,豐學門市,Other,6.25,465,50,No
+2025-05-06,Juice,2,80,冠桃園門市,Beverages,3.38,465,50,No
+2025-05-07,Hot Dog,3,120,中高站門市,Food,0.0,325,40,No
+2025-05-07,Sake,3,90,榮耀門市,Wine,5.0,325,40,No
+2025-05-07,Sandwich,1,35,冠桃園門市,Food,3.38,325,40,No
+2025-05-07,Milk Tea,1,45,北投門市,Beverages,4.0,325,40,No
+2025-05-07,Black Tea,1,35,中高站門市,Beverages,0.0,325,40,No
+2025-05-08,Sandwich,1,35,中高站門市,Food,0.0,395,0,No
+2025-05-08,Black Tea,3,105,北投門市,Beverages,4.0,395,0,No
+2025-05-08,Toiletries,3,255,中高站門市,Other,0.0,395,0,No
+2025-05-09,Coffee,1,85,豐學門市,Beverages,6.25,325,40,No
+2025-05-09,Black Tea,3,105,中高站門市,Beverages,0.0,325,40,No
+2025-05-09,Instant Noodles,3,135,榮耀門市,Food,5.0,325,40,No
+2025-05-11,Parcel Pickup,1,35,豐學門市,Other,6.25,615,50,No
+2025-05-11,Black Tea,2,70,冠桃園門市,Beverages,3.38,615,50,No
+2025-05-11,Stationery,3,90,豐學門市,Other,6.25,615,50,No
+2025-05-11,Juice,3,120,北投門市,Beverages,4.0,615,50,No
+2025-05-11,Instant Noodles,1,45,北投門市,Food,4.0,615,50,No
+2025-05-11,Toiletries,3,255,中高站門市,Other,0.0,615,50,No
+2025-05-13,Milk Tea,2,90,中高站門市,Beverages,0.0,260,40,No
+2025-05-13,Green Tea,2,60,中高站門市,Beverages,0.0,260,40,No
+2025-05-13,Juice,2,80,北投門市,Beverages,4.0,260,40,No
+2025-05-13,Sake,1,30,冠桃園門市,Wine,3.38,260,40,No
+2025-05-14,Sandwich,1,35,豐學門市,Food,6.25,1180,20,No
+2025-05-14,Toiletries,1,425,豐學門市,Other,6.25,1180,20,No
+2025-05-14,Juice,3,720,冠桃園門市,Beverages,3.38,1180,20,No
+2025-05-15,Parcel Pickup,3,105,北投門市,Other,4.0,230,40,No
+2025-05-15,Stationery,3,90,冠桃園門市,Other,3.38,230,40,No
+2025-05-15,Black Tea,1,35,豐學門市,Beverages,6.25,230,40,No
+2025-05-16,Toiletries,3,255,榮耀門市,Other,5.0,595,50,No
+2025-05-16,Juice,3,120,冠桃園門市,Beverages,3.38,595,50,No
+2025-05-16,Instant Noodles,2,90,中高站門市,Food,0.0,595,50,No
+2025-05-16,Parcel Pickup,1,35,冠桃園門市,Other,3.38,595,50,No
+2025-05-16,Sandwich,1,35,榮耀門市,Food,5.0,595,50,No
+2025-05-16,Green Tea,2,60,冠桃園門市,Beverages,3.38,595,50,No
+2025-05-18,Bento,2,170,中高站門市,Food,0.0,560,0,No
+2025-05-18,Milk Tea,3,135,豐學門市,Beverages,6.25,560,0,No
+2025-05-18,Coffee,3,255,豐學門市,Beverages,6.25,560,0,No
+2025-05-19,Whiskey,2,170,豐學門市,Wine,6.25,410,40,No
+2025-05-19,Stationery,2,60,北投門市,Other,4.0,410,40,No
+2025-05-19,Juice,2,80,中高站門市,Beverages,0.0,410,40,No
+2025-05-19,Rice Ball,1,30,北投門市,Food,4.0,410,40,No
+2025-05-19,Black Tea,2,70,冠桃園門市,Beverages,3.38,410,40,No
+2025-05-20,Whiskey,2,170,榮耀門市,Wine,5.0,410,40,No
+2025-05-20,Toiletries,2,170,北投門市,Other,4.0,410,40,No
+2025-05-20,Black Tea,2,70,中高站門市,Beverages,0.0,410,40,No
+2025-05-21,Stationery,2,60,北投門市,Other,4.0,765,40,No
+2025-05-21,Bento,3,255,北投門市,Food,4.0,765,40,No
+2025-05-21,Instant Noodles,2,90,豐學門市,Food,6.25,765,40,No
+2025-05-21,Parcel Pickup,3,105,豐學門市,Other,6.25,765,40,No
+2025-05-21,Coffee,3,255,中高站門市,Beverages,0.0,765,40,No
+2025-05-22,Hot Dog,3,120,中高站門市,Food,0.0,775,50,No
+2025-05-22,Milk Tea,3,135,冠桃園門市,Beverages,3.38,775,50,No
+2025-05-22,Instant Noodles,2,90,榮耀門市,Food,5.0,775,50,No
+2025-05-22,Sandwich,2,70,北投門市,Food,4.0,775,50,No
+2025-05-22,Toiletries,3,255,榮耀門市,Other,5.0,775,50,No
+2025-05-22,Beer,3,105,北投門市,Wine,4.0,775,50,No
+2025-05-24,Coffee,1,85,冠桃園門市,Beverages,3.38,310,0,No
+2025-05-24,Black Tea,3,105,冠桃園門市,Beverages,3.38,310,0,No
+2025-05-24,Hot Dog,3,120,冠桃園門市,Food,3.38,310,0,No
+2025-05-26,Beer,1,35,榮耀門市,Wine,5.0,355,40,No
+2025-05-26,Coffee,2,170,豐學門市,Beverages,6.25,355,40,No
+2025-05-26,Green Tea,3,90,中高站門市,Beverages,0.0,355,40,No
+2025-05-26,Rice Ball,2,60,豐學門市,Food,6.25,355,40,No
+2025-05-27,Sake,3,90,中高站門市,Wine,0.0,650,50,No
+2025-05-27,Sandwich,2,70,北投門市,Food,4.0,650,50,No
+2025-05-27,Whiskey,2,170,榮耀門市,Wine,5.0,650,50,No
+2025-05-27,Bento,2,170,冠桃園門市,Food,3.38,650,50,No
+2025-05-27,Black Tea,2,70,冠桃園門市,Beverages,3.38,650,50,No
+2025-05-27,Juice,2,80,豐學門市,Beverages,6.25,650,50,No
+2025-05-28,Parcel Pickup,3,105,中高站門市,Other,0.0,425,0,No
+2025-05-28,Beer,1,35,中高站門市,Wine,0.0,425,0,No
+2025-05-28,Stationery,1,30,北投門市,Other,4.0,425,0,No
+2025-05-28,Whiskey,3,255,北投門市,Wine,4.0,425,0,No
+2025-05-30,Black Tea,3,105,冠桃園門市,Beverages,3.38,600,50,No
+2025-05-30,Toiletries,1,85,冠桃園門市,Other,3.38,600,50,No
+2025-05-30,Coffee,1,85,榮耀門市,Beverages,5.0,600,50,No
+2025-05-30,Milk Tea,3,135,北投門市,Beverages,4.0,600,50,No
+2025-05-30,Beer,2,70,中高站門市,Wine,0.0,600,50,No
+2025-05-30,Hot Dog,3,120,北投門市,Food,4.0,600,50,No
+2025-05-31,Bento,3,255,冠桃園門市,Food,3.38,590,40,No
+2025-05-31,Hot Dog,2,80,中高站門市,Food,0.0,590,40,No
+2025-05-31,Stationery,1,30,中高站門市,Other,0.0,590,40,No
+2025-05-31,Milk Tea,1,225,榮耀門市,Beverages,5.0,590,40,No
+2025-06-01,Juice,2,560,中高站門市,Beverages,0.0,1130,30,No
+2025-06-01,Hot Dog,2,80,中高站門市,Food,0.0,1130,30,No
+2025-06-01,Instant Noodles,3,135,榮耀門市,Food,5.0,1130,30,No
+2025-06-01,Beer,2,70,中高站門市,Wine,0.0,1130,30,No
+2025-06-01,Whiskey,3,255,中高站門市,Wine,0.0,1130,30,No
+2025-06-01,Stationery,1,30,中高站門市,Other,0.0,1130,30,No
+2025-06-02,Beer,2,70,冠桃園門市,Wine,3.38,695,50,No
+2025-06-02,Bento,2,170,中高站門市,Food,0.0,695,50,No
+2025-06-02,Black Tea,1,35,冠桃園門市,Beverages,3.38,695,50,No
+2025-06-02,Juice,3,120,榮耀門市,Beverages,5.0,695,50,No
+2025-06-02,Instant Noodles,1,45,冠桃園門市,Food,3.38,695,50,No
+2025-06-02,Coffee,3,255,冠桃園門市,Beverages,3.38,695,50,No
+2025-06-03,Whiskey,3,255,冠桃園門市,Wine,3.38,580,40,No
+2025-06-03,Sake,1,30,冠桃園門市,Wine,3.38,580,40,No
+2025-06-03,Beer,3,105,冠桃園門市,Wine,3.38,580,40,No
+2025-06-03,Black Tea,3,105,中高站門市,Beverages,0.0,580,40,No
+2025-06-03,Bento,1,85,榮耀門市,Food,5.0,580,40,No
+2025-06-04,Bento,3,255,中高站門市,Food,0.0,795,50,No
+2025-06-04,Parcel Pickup,2,70,豐學門市,Other,6.25,795,50,No
+2025-06-04,Whiskey,3,255,北投門市,Wine,4.0,795,50,No
+2025-06-04,Juice,3,120,北投門市,Beverages,4.0,795,50,No
+2025-06-04,Green Tea,2,60,冠桃園門市,Beverages,3.38,795,50,No
+2025-06-04,Beer,1,35,中高站門市,Wine,0.0,795,50,No
+2025-06-05,Sandwich,1,35,中高站門市,Food,0.0,395,0,No
+2025-06-05,Toiletries,3,255,中高站門市,Other,0.0,395,0,No
+2025-06-05,Beer,3,105,豐學門市,Wine,6.25,395,0,No
+2025-06-06,Sandwich,3,105,豐學門市,Food,6.25,520,40,No
+2025-06-06,Hot Dog,2,80,中高站門市,Food,0.0,520,40,No
+2025-06-06,Juice,2,80,冠桃園門市,Beverages,3.38,520,40,No
+2025-06-06,Whiskey,3,255,冠桃園門市,Wine,3.38,520,40,No
+2025-06-07,Parcel Pickup,1,35,冠桃園門市,Other,3.38,365,0,No
+2025-06-07,Instant Noodles,3,135,榮耀門市,Food,5.0,365,0,No
+2025-06-07,Sandwich,3,105,冠桃園門市,Food,3.38,365,0,No
+2025-06-07,Stationery,3,90,榮耀門市,Other,5.0,365,0,No
+2025-06-08,Bento,2,170,豐學門市,Food,6.25,415,40,No
+2025-06-08,Parcel Pickup,3,105,豐學門市,Other,6.25,415,40,No
+2025-06-08,Juice,2,80,榮耀門市,Beverages,5.0,415,40,No
+2025-06-08,Rice Ball,2,60,中高站門市,Food,0.0,415,40,No
+2025-06-09,Toiletries,1,85,北投門市,Other,4.0,475,40,No
+2025-06-09,Hot Dog,2,80,中高站門市,Food,0.0,475,40,No
+2025-06-09,Green Tea,1,150,冠桃園門市,Beverages,3.38,475,40,No
+2025-06-09,Stationery,3,90,豐學門市,Other,6.25,475,40,No
+2025-06-09,Parcel Pickup,2,70,榮耀門市,Other,5.0,475,40,No
+2025-06-10,Coffee,3,255,榮耀門市,Beverages,5.0,685,50,No
+2025-06-10,Beer,1,35,中高站門市,Wine,0.0,685,50,No
+2025-06-10,Bento,1,85,北投門市,Food,4.0,685,50,No
+2025-06-10,Milk Tea,3,135,北投門市,Beverages,4.0,685,50,No
+2025-06-10,Black Tea,2,70,中高站門市,Beverages,0.0,685,50,No
+2025-06-10,Parcel Pickup,3,105,豐學門市,Other,6.25,685,50,No
+2025-06-13,Coffee,2,170,豐學門市,Beverages,6.25,325,0,No
+2025-06-13,Black Tea,1,35,豐學門市,Beverages,6.25,325,0,No
+2025-06-13,Hot Dog,3,120,中高站門市,Food,0.0,325,0,No
+2025-06-14,Rice Ball,1,30,豐學門市,Food,6.25,645,40,No
+2025-06-14,Juice,3,120,榮耀門市,Beverages,5.0,645,40,No
+2025-06-14,Milk Tea,3,135,冠桃園門市,Beverages,3.38,645,40,No
+2025-06-14,Sandwich,3,105,豐學門市,Food,6.25,645,40,No
+2025-06-14,Toiletries,3,255,榮耀門市,Other,5.0,645,40,No
+2025-06-15,Beer,1,35,豐學門市,Wine,6.25,1150,50,No
+2025-06-15,Black Tea,1,35,中高站門市,Beverages,0.0,1150,50,No
+2025-06-15,Juice,3,1080,豐學門市,Beverages,6.25,1150,50,No
+2025-06-16,Instant Noodles,2,90,豐學門市,Food,6.25,180,40,No
+2025-06-16,Sake,2,60,中高站門市,Wine,0.0,180,40,No
+2025-06-16,Stationery,1,30,冠桃園門市,Other,3.38,180,40,No
+2025-06-17,Black Tea,1,35,榮耀門市,Beverages,5.0,110,0,No
+2025-06-17,Parcel Pickup,1,35,榮耀門市,Other,5.0,110,0,No
+2025-06-17,Juice,1,40,豐學門市,Beverages,6.25,110,0,No
+2025-06-20,Sandwich,2,70,中高站門市,Food,0.0,365,40,No
+2025-06-20,Rice Ball,3,90,中高站門市,Food,0.0,365,40,No
+2025-06-20,Milk Tea,1,45,豐學門市,Beverages,6.25,365,40,No
+2025-06-20,Hot Dog,3,120,冠桃園門市,Food,3.38,365,40,No
+2025-06-20,Juice,1,40,北投門市,Beverages,4.0,365,40,No
+2025-06-21,Hot Dog,1,40,豐學門市,Food,6.25,250,0,No
+2025-06-21,Juice,3,120,豐學門市,Beverages,6.25,250,0,No
+2025-06-21,Green Tea,3,90,中高站門市,Beverages,0.0,250,0,No
+2025-06-23,Stationery,1,30,冠桃園門市,Other,3.38,495,0,No
+2025-06-23,Beer,1,35,冠桃園門市,Wine,3.38,495,0,No
+2025-06-23,Bento,1,85,冠桃園門市,Food,3.38,495,0,No
+2025-06-23,Milk Tea,2,90,北投門市,Beverages,4.0,495,0,No
+2025-06-23,Coffee,3,255,冠桃園門市,Beverages,3.38,495,0,No
+2025-06-24,Black Tea,1,35,豐學門市,Beverages,6.25,600,40,No
+2025-06-24,Toiletries,2,170,中高站門市,Other,0.0,600,40,No
+2025-06-24,Milk Tea,3,135,豐學門市,Beverages,6.25,600,40,No
+2025-06-24,Stationery,3,90,榮耀門市,Other,5.0,600,40,No
+2025-06-24,Whiskey,2,170,冠桃園門市,Wine,3.38,600,40,No
+2025-06-25,Bento,3,255,榮耀門市,Food,5.0,620,50,No
+2025-06-25,Beer,1,35,北投門市,Wine,4.0,620,50,No
+2025-06-25,Coffee,2,170,豐學門市,Beverages,6.25,620,50,No
+2025-06-25,Green Tea,1,30,中高站門市,Beverages,0.0,620,50,No
+2025-06-25,Rice Ball,2,60,中高站門市,Food,0.0,620,50,No
+2025-06-25,Black Tea,2,70,豐學門市,Beverages,6.25,620,50,No
+2025-06-26,Green Tea,2,60,中高站門市,Beverages,0.0,285,40,No
+2025-06-26,Sake,2,60,中高站門市,Wine,0.0,285,40,No
+2025-06-26,Rice Ball,1,30,榮耀門市,Food,5.0,285,40,No
+2025-06-26,Stationery,1,30,豐學門市,Other,6.25,285,40,No
+2025-06-26,Parcel Pickup,3,105,北投門市,Other,4.0,285,40,No
+2025-06-28,Whiskey,2,170,北投門市,Wine,4.0,545,40,No
+2025-06-28,Toiletries,1,85,冠桃園門市,Other,3.38,545,40,No
+2025-06-28,Sake,3,90,北投門市,Wine,4.0,545,40,No
+2025-06-28,Juice,3,120,冠桃園門市,Beverages,3.38,545,40,No
+2025-06-28,Hot Dog,2,80,榮耀門市,Food,5.0,545,40,No
+2025-06-29,Toiletries,1,85,冠桃園門市,Other,3.38,480,40,No
+2025-06-29,Stationery,1,30,冠桃園門市,Other,3.38,480,40,No
+2025-06-29,Sake,1,270,冠桃園門市,Wine,3.38,480,40,No
+2025-06-29,Green Tea,2,60,北投門市,Beverages,4.0,480,40,No
+2025-06-29,Sandwich,1,35,中高站門市,Food,0.0,480,40,No
+2025-06-30,Beer,2,70,榮耀門市,Wine,5.0,410,0,No
+2025-06-30,Toiletries,3,255,豐學門市,Other,6.25,410,0,No
+2025-06-30,Coffee,1,85,榮耀門市,Beverages,5.0,410,0,No
+2025-07-01,Whiskey,3,2040,冠桃園門市,Wine,3.38,2265,50,No
+2025-07-01,Green Tea,3,90,豐學門市,Beverages,6.25,2265,50,No
+2025-07-01,Milk Tea,3,135,冠桃園門市,Beverages,3.38,2265,50,No
+2025-07-05,Hot Dog,1,40,北投門市,Food,4.0,465,40,No
+2025-07-05,Whiskey,3,255,中高站門市,Wine,0.0,465,40,No
+2025-07-05,Toiletries,2,170,冠桃園門市,Other,3.38,465,40,No
+2025-07-06,Black Tea,1,35,北投門市,Beverages,4.0,690,40,No
+2025-07-06,Bento,1,85,豐學門市,Food,6.25,690,40,No
+2025-07-06,Green Tea,2,60,北投門市,Beverages,4.0,690,40,No
+2025-07-06,Coffee,3,255,冠桃園門市,Beverages,3.38,690,40,No
+2025-07-06,Whiskey,3,255,豐學門市,Wine,6.25,690,40,No
+2025-07-07,Rice Ball,3,90,冠桃園門市,Food,3.38,220,40,No
+2025-07-07,Instant Noodles,2,90,中高站門市,Food,0.0,220,40,No
+2025-07-07,Hot Dog,1,40,榮耀門市,Food,5.0,220,40,No
+2025-07-08,Juice,1,40,豐學門市,Beverages,6.25,325,0,No
+2025-07-08,Green Tea,3,90,榮耀門市,Beverages,5.0,325,0,No
+2025-07-08,Parcel Pickup,3,105,榮耀門市,Other,5.0,325,0,No
+2025-07-08,Rice Ball,3,90,豐學門市,Food,6.25,325,0,No
+2025-07-09,Whiskey,2,170,北投門市,Wine,4.0,710,40,No
+2025-07-09,Rice Ball,3,90,中高站門市,Food,0.0,710,40,No
+2025-07-09,Milk Tea,3,135,北投門市,Beverages,4.0,710,40,No
+2025-07-09,Bento,3,255,豐學門市,Food,6.25,710,40,No
+2025-07-09,Green Tea,2,60,榮耀門市,Beverages,5.0,710,40,No
+2025-07-10,Toiletries,3,255,榮耀門市,Other,5.0,445,40,No
+2025-07-10,Juice,3,120,冠桃園門市,Beverages,3.38,445,40,No
+2025-07-10,Black Tea,2,70,中高站門市,Beverages,0.0,445,40,No
+2025-07-11,Black Tea,3,105,豐學門市,Beverages,6.25,1185,20,No
+2025-07-11,Parcel Pickup,2,630,豐學門市,Other,6.25,1185,20,No
+2025-07-11,Bento,2,170,冠桃園門市,Food,3.38,1185,20,No
+2025-07-11,Juice,1,40,豐學門市,Beverages,6.25,1185,20,No
+2025-07-11,Green Tea,1,240,豐學門市,Beverages,6.25,1185,20,No
+2025-07-12,Beer,3,630,榮耀門市,Wine,5.0,855,20,No
+2025-07-12,Parcel Pickup,2,70,冠桃園門市,Other,3.38,855,20,No
+2025-07-12,Black Tea,1,35,冠桃園門市,Beverages,3.38,855,20,No
+2025-07-12,Juice,3,120,冠桃園門市,Beverages,3.38,855,20,No
+2025-07-13,Milk Tea,1,45,北投門市,Beverages,4.0,510,40,No
+2025-07-13,Whiskey,3,255,北投門市,Wine,4.0,510,40,No
+2025-07-13,Juice,3,120,中高站門市,Beverages,0.0,510,40,No
+2025-07-13,Instant Noodles,2,90,榮耀門市,Food,5.0,510,40,No
+2025-07-14,Instant Noodles,2,90,冠桃園門市,Food,3.38,495,50,No
+2025-07-14,Juice,3,120,榮耀門市,Beverages,5.0,495,50,No
+2025-07-14,Black Tea,1,35,中高站門市,Beverages,0.0,495,50,No
+2025-07-14,Sake,3,90,北投門市,Wine,4.0,495,50,No
+2025-07-14,Parcel Pickup,2,70,中高站門市,Other,0.0,495,50,No
+2025-07-14,Milk Tea,2,90,冠桃園門市,Beverages,3.38,495,50,No
+2025-07-16,Instant Noodles,2,90,北投門市,Food,4.0,305,40,No
+2025-07-16,Milk Tea,3,135,榮耀門市,Beverages,5.0,305,40,No
+2025-07-16,Juice,2,80,冠桃園門市,Beverages,3.38,305,40,No
+2025-07-17,Rice Ball,2,60,榮耀門市,Food,5.0,390,40,No
+2025-07-17,Milk Tea,2,90,冠桃園門市,Beverages,3.38,390,40,No
+2025-07-17,Beer,3,105,中高站門市,Wine,0.0,390,40,No
+2025-07-17,Instant Noodles,3,135,北投門市,Food,4.0,390,40,No
+2025-07-18,Whiskey,1,85,榮耀門市,Wine,5.0,325,0,No
+2025-07-18,Hot Dog,2,80,榮耀門市,Food,5.0,325,0,No
+2025-07-18,Black Tea,2,70,榮耀門市,Beverages,5.0,325,0,No
+2025-07-18,Green Tea,3,90,冠桃園門市,Beverages,3.38,325,0,No
+2025-07-19,Coffee,1,85,榮耀門市,Beverages,5.0,635,50,No
+2025-07-19,Sandwich,2,70,中高站門市,Food,0.0,635,50,No
+2025-07-19,Juice,2,80,冠桃園門市,Beverages,3.38,635,50,No
+2025-07-19,Toiletries,2,170,冠桃園門市,Other,3.38,635,50,No
+2025-07-19,Whiskey,2,170,北投門市,Wine,4.0,635,50,No
+2025-07-19,Green Tea,2,60,榮耀門市,Beverages,5.0,635,50,No
+2025-07-20,Parcel Pickup,2,70,豐學門市,Other,6.25,435,40,No
+2025-07-20,Rice Ball,1,30,冠桃園門市,Food,3.38,435,40,No
+2025-07-20,Hot Dog,2,80,北投門市,Food,4.0,435,40,No
+2025-07-20,Milk Tea,1,225,冠桃園門市,Beverages,3.38,435,40,No
+2025-07-20,Sake,1,30,北投門市,Wine,4.0,435,40,No
+2025-07-21,Instant Noodles,3,135,中高站門市,Food,0.0,605,50,No
+2025-07-21,Green Tea,3,90,榮耀門市,Beverages,5.0,605,50,No
+2025-07-21,Sake,3,90,冠桃園門市,Wine,3.38,605,50,No
+2025-07-21,Coffee,1,85,榮耀門市,Beverages,5.0,605,50,No
+2025-07-21,Milk Tea,3,135,榮耀門市,Beverages,5.0,605,50,No
+2025-07-21,Beer,2,70,冠桃園門市,Wine,3.38,605,50,No
+2025-07-22,Bento,1,85,冠桃園門市,Food,3.38,495,40,No
+2025-07-22,Instant Noodles,1,45,北投門市,Food,4.0,495,40,No
+2025-07-22,Green Tea,3,90,豐學門市,Beverages,6.25,495,40,No
+2025-07-22,Toiletries,2,170,冠桃園門市,Other,3.38,495,40,No
+2025-07-22,Beer,3,105,冠桃園門市,Wine,3.38,495,40,No
+2025-07-24,Milk Tea,3,135,北投門市,Beverages,4.0,670,50,No
+2025-07-24,Coffee,3,255,冠桃園門市,Beverages,3.38,670,50,No
+2025-07-24,Rice Ball,3,90,中高站門市,Food,0.0,670,50,No
+2025-07-24,Instant Noodles,1,45,中高站門市,Food,0.0,670,50,No
+2025-07-24,Green Tea,2,60,中高站門市,Beverages,0.0,670,50,No
+2025-07-24,Whiskey,1,85,豐學門市,Wine,6.25,670,50,No
+2025-07-25,Rice Ball,1,30,冠桃園門市,Food,3.38,600,40,No
+2025-07-25,Toiletries,3,255,北投門市,Other,4.0,600,40,No
+2025-07-25,Sake,2,60,中高站門市,Wine,0.0,600,40,No
+2025-07-25,Whiskey,3,255,豐學門市,Wine,6.25,600,40,No
+2025-07-26,Beer,2,70,冠桃園門市,Wine,3.38,410,0,No
+2025-07-26,Coffee,1,85,中高站門市,Beverages,0.0,410,0,No
+2025-07-26,Hot Dog,2,80,冠桃園門市,Food,3.38,410,0,No
+2025-07-26,Milk Tea,2,90,冠桃園門市,Beverages,3.38,410,0,No
+2025-07-26,Bento,1,85,冠桃園門市,Food,3.38,410,0,No
+2025-07-28,Rice Ball,2,60,豐學門市,Food,6.25,555,40,No
+2025-07-28,Whiskey,3,255,榮耀門市,Wine,5.0,555,40,No
+2025-07-28,Parcel Pickup,2,70,豐學門市,Other,6.25,555,40,No
+2025-07-28,Beer,1,35,豐學門市,Wine,6.25,555,40,No
+2025-07-28,Instant Noodles,3,135,北投門市,Food,4.0,555,40,No
+2025-07-29,Parcel Pickup,3,105,豐學門市,Other,6.25,1270,20,No
+2025-07-29,Sandwich,3,945,豐學門市,Food,6.25,1270,20,No
+2025-07-29,Milk Tea,3,135,豐學門市,Beverages,6.25,1270,20,No
+2025-07-29,Whiskey,1,85,豐學門市,Wine,6.25,1270,20,No
+2025-07-30,Bento,1,85,榮耀門市,Food,5.0,435,40,No
+2025-07-30,Parcel Pickup,2,70,中高站門市,Other,0.0,435,40,No
+2025-07-30,Stationery,1,30,北投門市,Other,4.0,435,40,No
+2025-07-30,Coffee,2,170,中高站門市,Beverages,0.0,435,40,No
+2025-07-30,Juice,2,80,冠桃園門市,Beverages,3.38,435,40,No
+2025-07-31,Whiskey,2,170,北投門市,Wine,4.0,450,0,No
+2025-07-31,Parcel Pickup,3,105,中高站門市,Other,0.0,450,0,No
+2025-07-31,Toiletries,1,85,中高站門市,Other,0.0,450,0,No
+2025-07-31,Milk Tea,2,90,北投門市,Beverages,4.0,450,0,No
+2025-08-01,Juice,2,80,冠桃園門市,Beverages,3.38,210,0,No
+2025-08-01,Milk Tea,2,90,中高站門市,Beverages,0.0,210,0,No
+2025-08-01,Hot Dog,1,40,中高站門市,Food,0.0,210,0,No
+2025-08-03,Juice,2,80,冠桃園門市,Beverages,3.38,600,40,No
+2025-08-03,Stationery,3,90,中高站門市,Other,0.0,600,40,No
+2025-08-03,Toiletries,3,255,中高站門市,Other,0.0,600,40,No
+2025-08-03,Instant Noodles,2,90,豐學門市,Food,6.25,600,40,No
+2025-08-03,Coffee,1,85,榮耀門市,Beverages,5.0,600,40,No
+2025-08-04,Hot Dog,2,80,冠桃園門市,Food,3.38,595,40,No
+2025-08-04,Toiletries,2,170,中高站門市,Other,0.0,595,40,No
+2025-08-04,Milk Tea,2,90,北投門市,Beverages,4.0,595,40,No
+2025-08-04,Bento,3,255,北投門市,Food,4.0,595,40,No
+2025-08-05,Sake,1,30,豐學門市,Wine,6.25,300,40,No
+2025-08-05,Hot Dog,3,120,北投門市,Food,4.0,300,40,No
+2025-08-05,Juice,3,120,豐學門市,Beverages,6.25,300,40,No
+2025-08-05,Rice Ball,1,30,榮耀門市,Food,5.0,300,40,No
+2025-08-06,Parcel Pickup,3,525,冠桃園門市,Other,3.38,650,40,No
+2025-08-06,Beer,1,35,豐學門市,Wine,6.25,650,40,No
+2025-08-06,Rice Ball,3,90,北投門市,Food,4.0,650,40,No
+2025-08-07,Green Tea,1,30,豐學門市,Beverages,6.25,310,40,No
+2025-08-07,Milk Tea,1,45,豐學門市,Beverages,6.25,310,40,No
+2025-08-07,Beer,3,105,冠桃園門市,Wine,3.38,310,40,No
+2025-08-07,Instant Noodles,1,45,冠桃園門市,Food,3.38,310,40,No
+2025-08-07,Whiskey,1,85,北投門市,Wine,4.0,310,40,No
+2025-08-08,Parcel Pickup,2,70,冠桃園門市,Other,3.38,285,40,No
+2025-08-08,Green Tea,3,90,冠桃園門市,Beverages,3.38,285,40,No
+2025-08-08,Rice Ball,3,90,豐學門市,Food,6.25,285,40,No
+2025-08-08,Black Tea,1,35,榮耀門市,Beverages,5.0,285,40,No
+2025-08-09,Instant Noodles,3,135,冠桃園門市,Food,3.38,275,40,No
+2025-08-09,Sake,2,60,北投門市,Wine,4.0,275,40,No
+2025-08-09,Juice,2,80,榮耀門市,Beverages,5.0,275,40,No
+2025-08-10,Bento,3,255,中高站門市,Food,0.0,530,40,No
+2025-08-10,Sandwich,1,35,豐學門市,Food,6.25,530,40,No
+2025-08-10,Instant Noodles,2,90,冠桃園門市,Food,3.38,530,40,No
+2025-08-10,Black Tea,3,105,冠桃園門市,Beverages,3.38,530,40,No
+2025-08-10,Milk Tea,1,45,豐學門市,Beverages,6.25,530,40,No
+2025-08-14,Milk Tea,2,90,中高站門市,Beverages,0.0,720,50,No
+2025-08-14,Parcel Pickup,1,35,北投門市,Other,4.0,720,50,No
+2025-08-14,Coffee,3,255,豐學門市,Beverages,6.25,720,50,No
+2025-08-14,Bento,2,170,中高站門市,Food,0.0,720,50,No
+2025-08-14,Hot Dog,2,80,榮耀門市,Food,5.0,720,50,No
+2025-08-14,Rice Ball,3,90,榮耀門市,Food,5.0,720,50,No
+2025-08-15,Whiskey,3,255,豐學門市,Wine,6.25,580,0,No
+2025-08-15,Bento,3,255,冠桃園門市,Food,3.38,580,0,No
+2025-08-15,Sandwich,2,70,豐學門市,Food,6.25,580,0,No
+2025-08-16,Toiletries,3,255,豐學門市,Other,6.25,600,40,No
+2025-08-16,Bento,3,255,北投門市,Food,4.0,600,40,No
+2025-08-16,Green Tea,3,90,榮耀門市,Beverages,5.0,600,40,No
+2025-08-17,Juice,2,80,冠桃園門市,Beverages,3.38,630,40,No
+2025-08-17,Coffee,2,170,中高站門市,Beverages,0.0,630,40,No
+2025-08-17,Hot Dog,3,120,冠桃園門市,Food,3.38,630,40,No
+2025-08-17,Instant Noodles,2,90,榮耀門市,Food,5.0,630,40,No
+2025-08-17,Toiletries,2,170,冠桃園門市,Other,3.38,630,40,No
+2025-08-18,Stationery,2,60,榮耀門市,Other,5.0,680,50,No
+2025-08-18,Rice Ball,3,90,北投門市,Food,4.0,680,50,No
+2025-08-18,Sandwich,2,70,中高站門市,Food,0.0,680,50,No
+2025-08-18,Beer,2,70,中高站門市,Wine,0.0,680,50,No
+2025-08-18,Whiskey,3,255,中高站門市,Wine,0.0,680,50,No
+2025-08-18,Milk Tea,3,135,榮耀門市,Beverages,5.0,680,50,No
+2025-08-19,Black Tea,3,105,北投門市,Beverages,4.0,600,40,No
+2025-08-19,Beer,2,70,榮耀門市,Wine,5.0,600,40,No
+2025-08-19,Coffee,1,85,榮耀門市,Beverages,5.0,600,40,No
+2025-08-19,Whiskey,2,170,榮耀門市,Wine,5.0,600,40,No
+2025-08-19,Toiletries,2,170,豐學門市,Other,6.25,600,40,No
+2025-08-20,Rice Ball,3,90,冠桃園門市,Food,3.38,550,50,No
+2025-08-20,Milk Tea,2,90,豐學門市,Beverages,6.25,550,50,No
+2025-08-20,Hot Dog,1,40,中高站門市,Food,0.0,550,50,No
+2025-08-20,Whiskey,3,255,豐學門市,Wine,6.25,550,50,No
+2025-08-20,Stationery,1,30,榮耀門市,Other,5.0,550,50,No
+2025-08-20,Instant Noodles,1,45,冠桃園門市,Food,3.38,550,50,No
+2025-08-22,Instant Noodles,2,630,榮耀門市,Food,5.0,750,40,No
+2025-08-22,Stationery,3,90,豐學門市,Other,6.25,750,40,No
+2025-08-22,Green Tea,1,30,北投門市,Beverages,4.0,750,40,No
+2025-08-24,Coffee,2,170,豐學門市,Beverages,6.25,775,50,No
+2025-08-24,Whiskey,2,170,中高站門市,Wine,0.0,775,50,No
+2025-08-24,Rice Ball,3,90,北投門市,Food,4.0,775,50,No
+2025-08-24,Hot Dog,3,120,豐學門市,Food,6.25,775,50,No
+2025-08-24,Green Tea,3,90,榮耀門市,Beverages,5.0,775,50,No
+2025-08-24,Milk Tea,3,135,冠桃園門市,Beverages,3.38,775,50,No
+2025-08-25,Parcel Pickup,1,35,冠桃園門市,Other,3.38,455,50,No
+2025-08-25,Rice Ball,3,90,豐學門市,Food,6.25,455,50,No
+2025-08-25,Sandwich,2,70,豐學門市,Food,6.25,455,50,No
+2025-08-25,Beer,3,105,冠桃園門市,Wine,3.38,455,50,No
+2025-08-25,Black Tea,1,35,冠桃園門市,Beverages,3.38,455,50,No
+2025-08-25,Juice,3,120,中高站門市,Beverages,0.0,455,50,No
+2025-08-26,Coffee,3,255,冠桃園門市,Beverages,3.38,565,50,No
+2025-08-26,Rice Ball,1,30,冠桃園門市,Food,3.38,565,50,No
+2025-08-26,Toiletries,1,85,中高站門市,Other,0.0,565,50,No
+2025-08-26,Bento,1,85,冠桃園門市,Food,3.38,565,50,No
+2025-08-26,Hot Dog,2,80,冠桃園門市,Food,3.38,565,50,No
+2025-08-26,Stationery,1,30,北投門市,Other,4.0,565,50,No
+2025-08-28,Sandwich,1,35,冠桃園門市,Food,3.38,395,40,No
+2025-08-28,Rice Ball,2,60,榮耀門市,Food,5.0,395,40,No
+2025-08-28,Stationery,2,60,中高站門市,Other,0.0,395,40,No
+2025-08-28,Parcel Pickup,3,105,北投門市,Other,4.0,395,40,No
+2025-08-28,Instant Noodles,3,135,北投門市,Food,4.0,395,40,No
+2025-08-29,Bento,1,85,北投門市,Food,4.0,150,0,No
+2025-08-29,Parcel Pickup,1,35,冠桃園門市,Other,3.38,150,0,No
+2025-08-29,Rice Ball,1,30,北投門市,Food,4.0,150,0,No
+2025-08-31,Milk Tea,1,45,豐學門市,Beverages,6.25,775,0,No
+2025-08-31,Sandwich,2,70,冠桃園門市,Food,3.38,775,0,No
+2025-08-31,Bento,3,255,豐學門市,Food,6.25,775,0,No
+2025-08-31,Instant Noodles,1,45,冠桃園門市,Food,3.38,775,0,No
+2025-08-31,Sake,2,360,冠桃園門市,Wine,3.38,775,0,No
+2025-09-02,Bento,3,255,豐學門市,Food,6.25,475,0,No
+2025-09-02,Green Tea,2,60,榮耀門市,Beverages,5.0,475,0,No
+2025-09-02,Hot Dog,1,40,榮耀門市,Food,5.0,475,0,No
+2025-09-02,Juice,3,120,榮耀門市,Beverages,5.0,475,0,No
+2025-09-03,Hot Dog,3,120,豐學門市,Food,6.25,585,0,No
+2025-09-03,Black Tea,3,105,冠桃園門市,Beverages,3.38,585,0,No
+2025-09-03,Bento,1,85,豐學門市,Food,6.25,585,0,No
+2025-09-03,Whiskey,2,170,豐學門市,Wine,6.25,585,0,No
+2025-09-03,Beer,3,105,豐學門市,Wine,6.25,585,0,No
+2025-09-04,Hot Dog,2,80,冠桃園門市,Food,3.38,315,40,No
+2025-09-04,Rice Ball,1,30,榮耀門市,Food,5.0,315,40,No
+2025-09-04,Sandwich,1,35,北投門市,Food,4.0,315,40,No
+2025-09-04,Whiskey,1,85,北投門市,Wine,4.0,315,40,No
+2025-09-04,Bento,1,85,冠桃園門市,Food,3.38,315,40,No
+2025-09-05,Milk Tea,1,45,豐學門市,Beverages,6.25,550,50,No
+2025-09-05,Whiskey,2,170,豐學門市,Wine,6.25,550,50,No
+2025-09-05,Hot Dog,2,80,中高站門市,Food,0.0,550,50,No
+2025-09-05,Rice Ball,2,60,冠桃園門市,Food,3.38,550,50,No
+2025-09-05,Sake,2,60,豐學門市,Wine,6.25,550,50,No
+2025-09-05,Instant Noodles,3,135,冠桃園門市,Food,3.38,550,50,No
+2025-09-06,Instant Noodles,2,90,豐學門市,Food,6.25,435,40,No
+2025-09-06,Rice Ball,3,90,冠桃園門市,Food,3.38,435,40,No
+2025-09-06,Bento,3,255,榮耀門市,Food,5.0,435,40,No
+2025-09-07,Instant Noodles,3,135,豐學門市,Food,6.25,295,0,No
+2025-09-07,Green Tea,3,90,榮耀門市,Beverages,5.0,295,0,No
+2025-09-07,Sandwich,2,70,榮耀門市,Food,5.0,295,0,No
+2025-09-08,Coffee,3,255,冠桃園門市,Beverages,3.38,635,40,No
+2025-09-08,Instant Noodles,3,135,中高站門市,Food,0.0,635,40,No
+2025-09-08,Rice Ball,3,90,冠桃園門市,Food,3.38,635,40,No
+2025-09-08,Bento,1,85,豐學門市,Food,6.25,635,40,No
+2025-09-08,Black Tea,2,70,中高站門市,Beverages,0.0,635,40,No
+2025-09-09,Toiletries,1,85,北投門市,Other,4.0,485,40,No
+2025-09-09,Sandwich,2,70,北投門市,Food,4.0,485,40,No
+2025-09-09,Rice Ball,2,60,北投門市,Food,4.0,485,40,No
+2025-09-09,Hot Dog,3,120,冠桃園門市,Food,3.38,485,40,No
+2025-09-09,Stationery,1,150,豐學門市,Other,6.25,485,40,No
+2025-09-10,Sandwich,1,315,豐學門市,Food,6.25,510,40,No
+2025-09-10,Milk Tea,3,135,冠桃園門市,Beverages,3.38,510,40,No
+2025-09-10,Green Tea,2,60,北投門市,Beverages,4.0,510,40,No
+2025-09-11,Black Tea,3,105,北投門市,Beverages,4.0,375,40,No
+2025-09-11,Stationery,3,90,北投門市,Other,4.0,375,40,No
+2025-09-11,Hot Dog,3,120,豐學門市,Food,6.25,375,40,No
+2025-09-11,Green Tea,2,60,榮耀門市,Beverages,5.0,375,40,No
+2025-09-12,Parcel Pickup,3,105,中高站門市,Other,0.0,365,0,No
+2025-09-12,Rice Ball,3,90,北投門市,Food,4.0,365,0,No
+2025-09-12,Bento,2,170,中高站門市,Food,0.0,365,0,No
+2025-09-13,Parcel Pickup,3,105,中高站門市,Other,0.0,595,50,No
+2025-09-13,Whiskey,2,170,北投門市,Wine,4.0,595,50,No
+2025-09-13,Sandwich,2,70,北投門市,Food,4.0,595,50,No
+2025-09-13,Instant Noodles,3,135,榮耀門市,Food,5.0,595,50,No
+2025-09-13,Milk Tea,1,45,中高站門市,Beverages,0.0,595,50,No
+2025-09-13,Beer,2,70,豐學門市,Wine,6.25,595,50,No
+2025-09-15,Sandwich,3,105,豐學門市,Food,6.25,235,0,No
+2025-09-15,Juice,1,40,北投門市,Beverages,4.0,235,0,No
+2025-09-15,Milk Tea,2,90,北投門市,Beverages,4.0,235,0,No
+2025-09-16,Instant Noodles,1,45,豐學門市,Food,6.25,280,40,No
+2025-09-16,Black Tea,3,105,榮耀門市,Beverages,5.0,280,40,No
+2025-09-16,Parcel Pickup,2,70,榮耀門市,Other,5.0,280,40,No
+2025-09-16,Rice Ball,2,60,北投門市,Food,4.0,280,40,No
+2025-09-17,Toiletries,1,85,榮耀門市,Other,5.0,395,40,No
+2025-09-17,Instant Noodles,2,90,北投門市,Food,4.0,395,40,No
+2025-09-17,Bento,1,85,冠桃園門市,Food,3.38,395,40,No
+2025-09-17,Milk Tea,3,135,北投門市,Beverages,4.0,395,40,No
+2025-09-18,Whiskey,1,85,冠桃園門市,Wine,3.38,520,50,No
+2025-09-18,Green Tea,1,180,北投門市,Beverages,4.0,520,50,No
+2025-09-18,Sake,2,60,豐學門市,Wine,6.25,520,50,No
+2025-09-18,Instant Noodles,2,90,豐學門市,Food,6.25,520,50,No
+2025-09-18,Beer,1,35,北投門市,Wine,4.0,520,50,No
+2025-09-18,Parcel Pickup,2,70,榮耀門市,Other,5.0,520,50,No
+2025-09-21,Sake,3,90,北投門市,Wine,4.0,535,40,No
+2025-09-21,Hot Dog,1,40,中高站門市,Food,0.0,535,40,No
+2025-09-21,Beer,1,315,豐學門市,Wine,6.25,535,40,No
+2025-09-21,Instant Noodles,2,90,榮耀門市,Food,5.0,535,40,No
+2025-09-22,Milk Tea,2,90,豐學門市,Beverages,6.25,365,40,No
+2025-09-22,Toiletries,2,170,榮耀門市,Other,5.0,365,40,No
+2025-09-22,Beer,3,105,冠桃園門市,Wine,3.38,365,40,No
+2025-09-23,Black Tea,2,70,豐學門市,Beverages,6.25,340,0,No
+2025-09-23,Hot Dog,1,40,北投門市,Food,4.0,340,0,No
+2025-09-23,Sake,2,60,北投門市,Wine,4.0,340,0,No
+2025-09-23,Bento,2,170,豐學門市,Food,6.25,340,0,No
+2025-09-24,Green Tea,3,90,冠桃園門市,Beverages,3.38,690,50,No
+2025-09-24,Black Tea,1,35,北投門市,Beverages,4.0,690,50,No
+2025-09-24,Whiskey,3,255,中高站門市,Wine,0.0,690,50,No
+2025-09-24,Instant Noodles,2,90,榮耀門市,Food,5.0,690,50,No
+2025-09-24,Milk Tea,3,135,中高站門市,Beverages,0.0,690,50,No
+2025-09-24,Coffee,1,85,冠桃園門市,Beverages,3.38,690,50,No
+2025-09-26,Toiletries,2,170,中高站門市,Other,0.0,2130,50,No
+2025-09-26,Bento,3,1785,榮耀門市,Food,5.0,2130,50,No
+2025-09-26,Black Tea,2,70,中高站門市,Beverages,0.0,2130,50,No
+2025-09-26,Beer,3,105,中高站門市,Wine,0.0,2130,50,No
+2025-09-28,Sandwich,1,210,北投門市,Food,4.0,600,40,No
+2025-09-28,Coffee,3,255,北投門市,Beverages,4.0,600,40,No
+2025-09-28,Parcel Pickup,2,70,冠桃園門市,Other,3.38,600,40,No
+2025-09-28,Sake,1,30,北投門市,Wine,4.0,600,40,No
+2025-09-28,Black Tea,1,35,豐學門市,Beverages,6.25,600,40,No
+2025-09-29,Toiletries,1,85,豐學門市,Other,6.25,415,40,No
+2025-09-29,Bento,2,170,榮耀門市,Food,5.0,415,40,No
+2025-09-29,Rice Ball,2,60,豐學門市,Food,6.25,415,40,No
+2025-09-29,Stationery,1,30,冠桃園門市,Other,3.38,415,40,No
+2025-09-29,Parcel Pickup,2,70,榮耀門市,Other,5.0,415,40,No
+2025-09-30,Rice Ball,1,30,榮耀門市,Food,5.0,105,40,No
+2025-09-30,Sandwich,1,35,中高站門市,Food,0.0,105,40,No
+2025-09-30,Juice,1,40,豐學門市,Beverages,6.25,105,40,No
+2025-10-01,Bento,2,1700,豐學門市,Food,6.25,1850,50,No
+2025-10-01,Instant Noodles,2,90,榮耀門市,Food,5.0,1850,50,No
+2025-10-01,Green Tea,2,60,豐學門市,Beverages,6.25,1850,50,No
+2025-10-02,Sake,3,90,榮耀門市,Wine,5.0,400,40,No
+2025-10-02,Beer,2,70,冠桃園門市,Wine,3.38,400,40,No
+2025-10-02,Rice Ball,3,90,榮耀門市,Food,5.0,400,40,No
+2025-10-02,Sandwich,3,105,北投門市,Food,4.0,400,40,No
+2025-10-02,Instant Noodles,1,45,榮耀門市,Food,5.0,400,40,No
+2025-10-03,Coffee,2,170,榮耀門市,Beverages,5.0,530,40,No
+2025-10-03,Whiskey,2,170,中高站門市,Wine,0.0,530,40,No
+2025-10-03,Sandwich,3,105,豐學門市,Food,6.25,530,40,No
+2025-10-03,Toiletries,1,85,北投門市,Other,4.0,530,40,No
+2025-10-04,Rice Ball,3,90,豐學門市,Food,6.25,185,40,No
+2025-10-04,Sandwich,1,35,榮耀門市,Food,5.0,185,40,No
+2025-10-04,Sake,2,60,冠桃園門市,Wine,3.38,185,40,No
+2025-10-05,Beer,1,35,榮耀門市,Wine,5.0,550,50,No
+2025-10-05,Hot Dog,3,120,北投門市,Food,4.0,550,50,No
+2025-10-05,Black Tea,2,70,豐學門市,Beverages,6.25,550,50,No
+2025-10-05,Whiskey,2,170,榮耀門市,Wine,5.0,550,50,No
+2025-10-05,Juice,3,120,中高站門市,Beverages,0.0,550,50,No
+2025-10-05,Sandwich,1,35,豐學門市,Food,6.25,550,50,No
+2025-10-06,Sandwich,1,175,冠桃園門市,Food,3.38,355,40,No
+2025-10-06,Instant Noodles,2,90,豐學門市,Food,6.25,355,40,No
+2025-10-06,Stationery,3,90,中高站門市,Other,0.0,355,40,No
+2025-10-07,Milk Tea,2,90,中高站門市,Beverages,0.0,380,40,No
+2025-10-07,Sandwich,2,70,中高站門市,Food,0.0,380,40,No
+2025-10-07,Beer,2,70,北投門市,Wine,4.0,380,40,No
+2025-10-07,Rice Ball,2,60,北投門市,Food,4.0,380,40,No
+2025-10-07,Instant Noodles,2,90,榮耀門市,Food,5.0,380,40,No
+2025-10-08,Toiletries,1,85,榮耀門市,Other,5.0,370,40,No
+2025-10-08,Coffee,1,85,中高站門市,Beverages,0.0,370,40,No
+2025-10-08,Milk Tea,2,90,榮耀門市,Beverages,5.0,370,40,No
+2025-10-08,Juice,1,40,豐學門市,Beverages,6.25,370,40,No
+2025-10-08,Beer,2,70,豐學門市,Wine,6.25,370,40,No
+2025-10-10,Green Tea,1,270,中高站門市,Beverages,0.0,660,40,No
+2025-10-10,Instant Noodles,3,135,榮耀門市,Food,5.0,660,40,No
+2025-10-10,Bento,2,170,榮耀門市,Food,5.0,660,40,No
+2025-10-10,Whiskey,1,85,冠桃園門市,Wine,3.38,660,40,No
+2025-10-11,Sandwich,2,70,豐學門市,Food,6.25,245,40,No
+2025-10-11,Instant Noodles,1,45,冠桃園門市,Food,3.38,245,40,No
+2025-10-11,Rice Ball,3,90,北投門市,Food,4.0,245,40,No
+2025-10-11,Hot Dog,1,40,冠桃園門市,Food,3.38,245,40,No
+2025-10-14,Hot Dog,3,120,中高站門市,Food,0.0,1455,50,No
+2025-10-14,Toiletries,1,85,中高站門市,Other,0.0,1455,50,No
+2025-10-14,Milk Tea,3,1080,冠桃園門市,Beverages,3.38,1455,50,No
+2025-10-14,Bento,2,170,冠桃園門市,Food,3.38,1455,50,No
+2025-10-15,Sandwich,3,105,冠桃園門市,Food,3.38,225,0,No
+2025-10-15,Rice Ball,1,30,冠桃園門市,Food,3.38,225,0,No
+2025-10-15,Sake,3,90,中高站門市,Wine,0.0,225,0,No
+2025-10-16,Hot Dog,3,120,豐學門市,Food,6.25,340,40,No
+2025-10-16,Sake,2,60,榮耀門市,Wine,5.0,340,40,No
+2025-10-16,Beer,2,70,榮耀門市,Wine,5.0,340,40,No
+2025-10-16,Green Tea,3,90,冠桃園門市,Beverages,3.38,340,40,No
+2025-10-17,Hot Dog,1,40,中高站門市,Food,0.0,500,40,No
+2025-10-17,Whiskey,2,170,中高站門市,Wine,0.0,500,40,No
+2025-10-17,Parcel Pickup,1,35,北投門市,Other,4.0,500,40,No
+2025-10-17,Toiletries,3,255,冠桃園門市,Other,3.38,500,40,No
+2025-10-20,Hot Dog,2,80,榮耀門市,Food,5.0,515,40,No
+2025-10-20,Instant Noodles,3,135,冠桃園門市,Food,3.38,515,40,No
+2025-10-20,Milk Tea,1,45,榮耀門市,Beverages,5.0,515,40,No
+2025-10-20,Whiskey,3,255,中高站門市,Wine,0.0,515,40,No
+2025-10-21,Parcel Pickup,3,105,冠桃園門市,Other,3.38,755,50,No
+2025-10-21,Coffee,3,255,豐學門市,Beverages,6.25,755,50,No
+2025-10-21,Stationery,3,90,榮耀門市,Other,5.0,755,50,No
+2025-10-21,Sake,1,30,冠桃園門市,Wine,3.38,755,50,No
+2025-10-21,Sandwich,3,105,豐學門市,Food,6.25,755,50,No
+2025-10-21,Whiskey,2,170,中高站門市,Wine,0.0,755,50,No
+2025-10-22,Milk Tea,1,45,北投門市,Beverages,4.0,345,50,No
+2025-10-22,Parcel Pickup,1,35,北投門市,Other,4.0,345,50,No
+2025-10-22,Green Tea,1,30,北投門市,Beverages,4.0,345,50,No
+2025-10-22,Black Tea,2,70,冠桃園門市,Beverages,3.38,345,50,No
+2025-10-22,Sandwich,3,105,北投門市,Food,4.0,345,50,No
+2025-10-22,Rice Ball,2,60,榮耀門市,Food,5.0,345,50,No
+2025-10-23,Sake,3,90,榮耀門市,Wine,5.0,270,40,No
+2025-10-23,Rice Ball,2,60,北投門市,Food,4.0,270,40,No
+2025-10-23,Juice,3,120,冠桃園門市,Beverages,3.38,270,40,No
+2025-10-24,Milk Tea,2,90,冠桃園門市,Beverages,3.38,500,40,No
+2025-10-24,Coffee,2,170,北投門市,Beverages,4.0,500,40,No
+2025-10-24,Sandwich,2,70,榮耀門市,Food,5.0,500,40,No
+2025-10-24,Bento,1,85,中高站門市,Food,0.0,500,40,No
+2025-10-24,Toiletries,1,85,冠桃園門市,Other,3.38,500,40,No
+2025-10-25,Milk Tea,2,90,中高站門市,Beverages,0.0,295,0,No
+2025-10-25,Juice,3,120,榮耀門市,Beverages,5.0,295,0,No
+2025-10-25,Toiletries,1,85,榮耀門市,Other,5.0,295,0,No
+2025-10-27,Whiskey,3,255,豐學門市,Wine,6.25,1025,20,No
+2025-10-27,Toiletries,1,510,豐學門市,Other,6.25,1025,20,No
+2025-10-27,Coffee,2,170,中高站門市,Beverages,0.0,1025,20,No
+2025-10-27,Sake,3,90,豐學門市,Wine,6.25,1025,20,No
+2025-10-28,Stationery,3,90,榮耀門市,Other,5.0,205,0,No
+2025-10-28,Instant Noodles,1,45,中高站門市,Food,0.0,205,0,No
+2025-10-28,Beer,1,35,榮耀門市,Wine,5.0,205,0,No
+2025-10-28,Parcel Pickup,1,35,中高站門市,Other,0.0,205,0,No
+2025-10-29,Rice Ball,2,60,冠桃園門市,Food,3.38,235,0,No
+2025-10-29,Sandwich,2,70,豐學門市,Food,6.25,235,0,No
+2025-10-29,Parcel Pickup,3,105,冠桃園門市,Other,3.38,235,0,No
+2025-10-30,Beer,1,35,中高站門市,Wine,0.0,430,40,No
+2025-10-30,Hot Dog,2,80,北投門市,Food,4.0,430,40,No
+2025-10-30,Sandwich,3,105,中高站門市,Food,0.0,430,40,No
+2025-10-30,Juice,3,120,榮耀門市,Beverages,5.0,430,40,No
+2025-10-30,Green Tea,3,90,中高站門市,Beverages,0.0,430,40,No
+2025-10-31,Milk Tea,1,45,豐學門市,Beverages,6.25,190,0,No
+2025-10-31,Rice Ball,1,30,豐學門市,Food,6.25,190,0,No
+2025-10-31,Hot Dog,2,80,榮耀門市,Food,5.0,190,0,No
+2025-10-31,Beer,1,35,豐學門市,Wine,6.25,190,0,No
+2025-11-01,Whiskey,1,85,冠桃園門市,Wine,3.38,215,0,No
+2025-11-01,Green Tea,2,60,中高站門市,Beverages,0.0,215,0,No
+2025-11-01,Black Tea,2,70,中高站門市,Beverages,0.0,215,0,No
+2025-11-02,Sake,3,630,豐學門市,Wine,6.25,1500,20,No
+2025-11-02,Sandwich,2,70,北投門市,Food,4.0,1500,20,No
+2025-11-02,Instant Noodles,2,630,北投門市,Food,4.0,1500,20,No
+2025-11-02,Toiletries,1,85,豐學門市,Other,6.25,1500,20,No
+2025-11-02,Bento,1,85,北投門市,Food,4.0,1500,20,No
+2025-11-03,Hot Dog,2,80,冠桃園門市,Food,3.38,425,0,No
+2025-11-03,Bento,3,255,冠桃園門市,Food,3.38,425,0,No
+2025-11-03,Milk Tea,2,90,豐學門市,Beverages,6.25,425,0,No
+2025-11-04,Stationery,2,60,北投門市,Other,4.0,335,40,No
+2025-11-04,Beer,3,105,冠桃園門市,Wine,3.38,335,40,No
+2025-11-04,Bento,2,170,中高站門市,Food,0.0,335,40,No
+2025-11-06,Instant Noodles,1,45,中高站門市,Food,0.0,340,40,No
+2025-11-06,Coffee,3,255,豐學門市,Beverages,6.25,340,40,No
+2025-11-06,Juice,1,40,冠桃園門市,Beverages,3.38,340,40,No
+2025-11-07,Sake,2,60,冠桃園門市,Wine,3.38,680,50,No
+2025-11-07,Toiletries,3,255,榮耀門市,Other,5.0,680,50,No
+2025-11-07,Juice,2,80,中高站門市,Beverages,0.0,680,50,No
+2025-11-07,Rice Ball,3,90,豐學門市,Food,6.25,680,50,No
+2025-11-07,Stationery,3,90,豐學門市,Other,6.25,680,50,No
+2025-11-07,Beer,3,105,冠桃園門市,Wine,3.38,680,50,No
+2025-11-10,Toiletries,3,255,冠桃園門市,Other,3.38,415,40,No
+2025-11-10,Hot Dog,1,40,北投門市,Food,4.0,415,40,No
+2025-11-10,Rice Ball,1,30,榮耀門市,Food,5.0,415,40,No
+2025-11-10,Green Tea,3,90,北投門市,Beverages,4.0,415,40,No
+2025-11-11,Sake,1,30,北投門市,Wine,4.0,280,0,No
+2025-11-11,Hot Dog,1,40,冠桃園門市,Food,3.38,280,0,No
+2025-11-11,Juice,1,40,北投門市,Beverages,4.0,280,0,No
+2025-11-11,Whiskey,2,170,北投門市,Wine,4.0,280,0,No
+2025-11-12,Sandwich,3,105,冠桃園門市,Food,3.38,635,50,No
+2025-11-12,Green Tea,3,90,北投門市,Beverages,4.0,635,50,No
+2025-11-12,Black Tea,1,35,中高站門市,Beverages,0.0,635,50,No
+2025-11-12,Sake,3,90,榮耀門市,Wine,5.0,635,50,No
+2025-11-12,Bento,3,255,豐學門市,Food,6.25,635,50,No
+2025-11-12,Stationery,2,60,豐學門市,Other,6.25,635,50,No
+2025-11-13,Juice,3,120,中高站門市,Beverages,0.0,390,50,No
+2025-11-13,Beer,3,105,榮耀門市,Wine,5.0,390,50,No
+2025-11-13,Hot Dog,1,40,北投門市,Food,4.0,390,50,No
+2025-11-13,Sandwich,1,35,榮耀門市,Food,5.0,390,50,No
+2025-11-13,Rice Ball,1,30,榮耀門市,Food,5.0,390,50,No
+2025-11-13,Stationery,2,60,豐學門市,Other,6.25,390,50,No
+2025-11-14,Beer,3,105,北投門市,Wine,4.0,610,40,No
+2025-11-14,Sake,1,30,榮耀門市,Wine,5.0,610,40,No
+2025-11-14,Black Tea,1,280,中高站門市,Beverages,0.0,610,40,No
+2025-11-14,Sandwich,3,105,榮耀門市,Food,5.0,610,40,No
+2025-11-14,Green Tea,3,90,榮耀門市,Beverages,5.0,610,40,No
+2025-11-15,Parcel Pickup,2,70,豐學門市,Other,6.25,345,40,No
+2025-11-15,Toiletries,2,170,榮耀門市,Other,5.0,345,40,No
+2025-11-15,Instant Noodles,1,45,中高站門市,Food,0.0,345,40,No
+2025-11-15,Rice Ball,2,60,中高站門市,Food,0.0,345,40,No
+2025-11-16,Sandwich,3,105,榮耀門市,Food,5.0,555,40,No
+2025-11-16,Instant Noodles,2,90,北投門市,Food,4.0,555,40,No
+2025-11-16,Parcel Pickup,3,105,北投門市,Other,4.0,555,40,No
+2025-11-16,Coffee,3,255,豐學門市,Beverages,6.25,555,40,No
+2025-11-19,Juice,2,80,冠桃園門市,Beverages,3.38,660,50,No
+2025-11-19,Rice Ball,3,90,榮耀門市,Food,5.0,660,50,No
+2025-11-19,Sandwich,2,70,冠桃園門市,Food,3.38,660,50,No
+2025-11-19,Sake,2,60,冠桃園門市,Wine,3.38,660,50,No
+2025-11-19,Coffee,3,255,北投門市,Beverages,4.0,660,50,No
+2025-11-19,Black Tea,3,105,冠桃園門市,Beverages,3.38,660,50,No
+2025-11-20,Hot Dog,3,120,中高站門市,Food,0.0,480,40,No
+2025-11-20,Bento,2,170,冠桃園門市,Food,3.38,480,40,No
+2025-11-20,Coffee,1,85,豐學門市,Beverages,6.25,480,40,No
+2025-11-20,Sandwich,3,105,冠桃園門市,Food,3.38,480,40,No
+2025-11-21,Milk Tea,1,45,中高站門市,Beverages,0.0,275,40,No
+2025-11-21,Black Tea,1,35,北投門市,Beverages,4.0,275,40,No
+2025-11-21,Green Tea,3,90,中高站門市,Beverages,0.0,275,40,No
+2025-11-21,Parcel Pickup,3,105,豐學門市,Other,6.25,275,40,No
+2025-11-22,Coffee,1,85,北投門市,Beverages,4.0,460,40,No
+2025-11-22,Sandwich,2,70,豐學門市,Food,6.25,460,40,No
+2025-11-22,Beer,3,105,豐學門市,Wine,6.25,460,40,No
+2025-11-22,Bento,2,170,中高站門市,Food,0.0,460,40,No
+2025-11-22,Rice Ball,1,30,榮耀門市,Food,5.0,460,40,No
+2025-11-23,Green Tea,1,30,北投門市,Beverages,4.0,255,0,No
+2025-11-23,Stationery,2,60,北投門市,Other,4.0,255,0,No
+2025-11-23,Hot Dog,3,120,北投門市,Food,4.0,255,0,No
+2025-11-23,Instant Noodles,1,45,冠桃園門市,Food,3.38,255,0,No
+2025-11-25,Beer,2,70,豐學門市,Wine,6.25,440,40,No
+2025-11-25,Bento,1,85,中高站門市,Food,0.0,440,40,No
+2025-11-25,Sake,1,30,榮耀門市,Wine,5.0,440,40,No
+2025-11-25,Toiletries,3,255,中高站門市,Other,0.0,440,40,No
+2025-11-27,Coffee,1,85,中高站門市,Beverages,0.0,505,50,No
+2025-11-27,Milk Tea,3,135,北投門市,Beverages,4.0,505,50,No
+2025-11-27,Hot Dog,2,80,冠桃園門市,Food,3.38,505,50,No
+2025-11-27,Black Tea,2,70,豐學門市,Beverages,6.25,505,50,No
+2025-11-27,Stationery,1,30,中高站門市,Other,0.0,505,50,No
+2025-11-27,Parcel Pickup,3,105,豐學門市,Other,6.25,505,50,No
+2025-11-28,Parcel Pickup,1,35,北投門市,Other,4.0,530,40,No
+2025-11-28,Hot Dog,2,80,北投門市,Food,4.0,530,40,No
+2025-11-28,Black Tea,2,70,豐學門市,Beverages,6.25,530,40,No
+2025-11-28,Toiletries,3,255,榮耀門市,Other,5.0,530,40,No
+2025-11-28,Sake,3,90,北投門市,Wine,4.0,530,40,No
+2025-11-29,Sandwich,1,35,北投門市,Food,4.0,420,40,No
+2025-11-29,Bento,3,255,榮耀門市,Food,5.0,420,40,No
+2025-11-29,Hot Dog,1,40,豐學門市,Food,6.25,420,40,No
+2025-11-29,Stationery,3,90,榮耀門市,Other,5.0,420,40,No
+2025-11-30,Parcel Pickup,3,105,北投門市,Other,4.0,275,40,No
+2025-11-30,Instant Noodles,2,90,中高站門市,Food,0.0,275,40,No
+2025-11-30,Juice,2,80,榮耀門市,Beverages,5.0,275,40,No
+2025-12-01,Black Tea,2,70,中高站門市,Beverages,0.0,530,40,No
+2025-12-01,Juice,3,120,榮耀門市,Beverages,5.0,530,40,No
+2025-12-01,Milk Tea,1,45,中高站門市,Beverages,0.0,530,40,No
+2025-12-01,Coffee,3,255,冠桃園門市,Beverages,3.38,530,40,No
+2025-12-01,Hot Dog,1,40,冠桃園門市,Food,3.38,530,40,No
+2025-12-02,Green Tea,3,90,冠桃園門市,Beverages,3.38,545,40,No
+2025-12-02,Bento,2,170,冠桃園門市,Food,3.38,545,40,No
+2025-12-02,Beer,1,35,榮耀門市,Wine,5.0,545,40,No
+2025-12-02,Hot Dog,2,80,北投門市,Food,4.0,545,40,No
+2025-12-02,Whiskey,2,170,豐學門市,Wine,6.25,545,40,No
+2025-12-04,Whiskey,3,255,北投門市,Wine,4.0,565,40,No
+2025-12-04,Black Tea,3,105,冠桃園門市,Beverages,3.38,565,40,No
+2025-12-04,Sandwich,2,70,中高站門市,Food,0.0,565,40,No
+2025-12-04,Rice Ball,1,30,北投門市,Food,4.0,565,40,No
+2025-12-04,Parcel Pickup,3,105,中高站門市,Other,0.0,565,40,No
+2025-12-05,Bento,2,170,豐學門市,Food,6.25,700,50,No
+2025-12-05,Coffee,2,170,榮耀門市,Beverages,5.0,700,50,No
+2025-12-05,Rice Ball,2,60,冠桃園門市,Food,3.38,700,50,No
+2025-12-05,Black Tea,3,105,中高站門市,Beverages,0.0,700,50,No
+2025-12-05,Milk Tea,2,90,北投門市,Beverages,4.0,700,50,No
+2025-12-05,Beer,3,105,榮耀門市,Wine,5.0,700,50,No
+2025-12-06,Milk Tea,2,90,豐學門市,Beverages,6.25,390,0,No
+2025-12-06,Instant Noodles,1,270,冠桃園門市,Food,3.38,390,0,No
+2025-12-06,Green Tea,1,30,豐學門市,Beverages,6.25,390,0,No
+2025-12-07,Black Tea,1,35,北投門市,Beverages,4.0,510,50,No
+2025-12-07,Stationery,3,90,北投門市,Other,4.0,510,50,No
+2025-12-07,Instant Noodles,1,45,豐學門市,Food,6.25,510,50,No
+2025-12-07,Juice,2,80,冠桃園門市,Beverages,3.38,510,50,No
+2025-12-07,Sake,3,90,冠桃園門市,Wine,3.38,510,50,No
+2025-12-07,Whiskey,2,170,中高站門市,Wine,0.0,510,50,No
+2025-12-08,Hot Dog,2,80,榮耀門市,Food,5.0,245,40,No
+2025-12-08,Whiskey,1,85,北投門市,Wine,4.0,245,40,No
+2025-12-08,Juice,2,80,中高站門市,Beverages,0.0,245,40,No
+2025-12-09,Beer,3,105,榮耀門市,Wine,5.0,300,0,No
+2025-12-09,Sake,2,60,豐學門市,Wine,6.25,300,0,No
+2025-12-09,Milk Tea,3,135,榮耀門市,Beverages,5.0,300,0,No
+2025-12-10,Beer,1,35,中高站門市,Wine,0.0,295,40,No
+2025-12-10,Instant Noodles,2,90,北投門市,Food,4.0,295,40,No
+2025-12-10,Milk Tea,2,90,豐學門市,Beverages,6.25,295,40,No
+2025-12-10,Hot Dog,2,80,冠桃園門市,Food,3.38,295,40,No
+2025-12-11,Beer,3,105,北投門市,Wine,4.0,600,40,No
+2025-12-11,Juice,3,120,榮耀門市,Beverages,5.0,600,40,No
+2025-12-11,Bento,3,255,豐學門市,Food,6.25,600,40,No
+2025-12-11,Hot Dog,3,120,北投門市,Food,4.0,600,40,No
+2025-12-12,Green Tea,3,90,豐學門市,Beverages,6.25,460,40,No
+2025-12-12,Sake,2,60,豐學門市,Wine,6.25,460,40,No
+2025-12-12,Instant Noodles,3,135,榮耀門市,Food,5.0,460,40,No
+2025-12-12,Beer,1,175,中高站門市,Wine,0.0,460,40,No
+2025-12-13,Black Tea,1,35,北投門市,Beverages,4.0,460,50,No
+2025-12-13,Green Tea,3,90,北投門市,Beverages,4.0,460,50,No
+2025-12-13,Parcel Pickup,3,105,北投門市,Other,4.0,460,50,No
+2025-12-13,Hot Dog,1,40,中高站門市,Food,0.0,460,50,No
+2025-12-13,Toiletries,1,85,北投門市,Other,4.0,460,50,No
+2025-12-13,Sandwich,3,105,榮耀門市,Food,5.0,460,50,No
+2025-12-15,Green Tea,2,60,北投門市,Beverages,4.0,1295,30,No
+2025-12-15,Milk Tea,1,45,北投門市,Beverages,4.0,1295,30,No
+2025-12-15,Hot Dog,1,320,北投門市,Food,4.0,1295,30,No
+2025-12-15,Stationery,1,180,北投門市,Other,4.0,1295,30,No
+2025-12-15,Beer,2,630,豐學門市,Wine,6.25,1295,30,No
+2025-12-15,Rice Ball,2,60,豐學門市,Food,6.25,1295,30,No
+2025-12-17,Whiskey,1,85,榮耀門市,Wine,5.0,360,40,No
+2025-12-17,Sandwich,3,105,豐學門市,Food,6.25,360,40,No
+2025-12-17,Toiletries,2,170,冠桃園門市,Other,3.38,360,40,No
+2025-12-18,Bento,2,170,冠桃園門市,Food,3.38,480,50,No
+2025-12-18,Instant Noodles,2,90,豐學門市,Food,6.25,480,50,No
+2025-12-18,Coffee,1,85,榮耀門市,Beverages,5.0,480,50,No
+2025-12-18,Green Tea,1,30,豐學門市,Beverages,6.25,480,50,No
+2025-12-18,Milk Tea,1,45,豐學門市,Beverages,6.25,480,50,No
+2025-12-18,Rice Ball,2,60,豐學門市,Food,6.25,480,50,No
+2025-12-19,Parcel Pickup,1,35,榮耀門市,Other,5.0,400,40,No
+2025-12-19,Sake,3,90,冠桃園門市,Wine,3.38,400,40,No
+2025-12-19,Bento,2,170,北投門市,Food,4.0,400,40,No
+2025-12-19,Sandwich,3,105,中高站門市,Food,0.0,400,40,No
+2025-12-20,Rice Ball,1,30,榮耀門市,Food,5.0,180,0,No
+2025-12-20,Parcel Pickup,2,70,北投門市,Other,4.0,180,0,No
+2025-12-20,Juice,2,80,北投門市,Beverages,4.0,180,0,No
+2025-12-21,Sake,1,30,榮耀門市,Wine,5.0,205,40,No
+2025-12-21,Parcel Pickup,2,70,豐學門市,Other,6.25,205,40,No
+2025-12-21,Beer,3,105,冠桃園門市,Wine,3.38,205,40,No
+2025-12-22,Sandwich,3,105,冠桃園門市,Food,3.38,580,40,No
+2025-12-22,Parcel Pickup,3,105,豐學門市,Other,6.25,580,40,No
+2025-12-22,Green Tea,1,30,北投門市,Beverages,4.0,580,40,No
+2025-12-22,Bento,2,170,豐學門市,Food,6.25,580,40,No
+2025-12-22,Coffee,2,170,冠桃園門市,Beverages,3.38,580,40,No
+2025-12-24,Sake,2,60,北投門市,Wine,4.0,560,50,No
+2025-12-24,Whiskey,2,170,冠桃園門市,Wine,3.38,560,50,No
+2025-12-24,Toiletries,1,85,冠桃園門市,Other,3.38,560,50,No
+2025-12-24,Black Tea,1,35,北投門市,Beverages,4.0,560,50,No
+2025-12-24,Milk Tea,2,90,豐學門市,Beverages,6.25,560,50,No
+2025-12-24,Juice,3,120,豐學門市,Beverages,6.25,560,50,No
+2025-12-26,Bento,2,1020,冠桃園門市,Food,3.38,1150,50,No
+2025-12-26,Juice,1,40,北投門市,Beverages,4.0,1150,50,No
+2025-12-26,Stationery,3,90,冠桃園門市,Other,3.38,1150,50,No
+2025-12-29,Toiletries,1,85,中高站門市,Other,0.0,310,0,No
+2025-12-29,Parcel Pickup,1,35,中高站門市,Other,0.0,310,0,No
+2025-12-29,Sake,2,60,北投門市,Wine,4.0,310,0,No
+2025-12-29,Green Tea,2,60,北投門市,Beverages,4.0,310,0,No
+2025-12-29,Beer,2,70,北投門市,Wine,4.0,310,0,No
