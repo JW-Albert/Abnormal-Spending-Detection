@@ -50,7 +50,7 @@ with open(os.path.join(MODEL_DIR, 'feature_order.json'), encoding='utf-8') as f:
 # 載入 autoencoder, ensemble
 try:
     from lib.autoencoder_model import get_autoencoder_scores
-    from ensemble import get_ensemble_score
+    from lib.ensemble import get_ensemble_score
     autoencoder_loaded = True
 except ImportError:
     autoencoder_loaded = False
@@ -230,8 +230,6 @@ def analyze():
         nan_columns = list(all_features.columns[all_features.isna().any()])
         all_features = all_features.fillna(0)
         X = models['scaler'].transform(all_features)
-        print('all_features(before scale):', all_features.values)
-        print('X(after scale):', X)
         # 多監督式模型推論（含 LR 與 KNN）
         results = {}
         votes = []
@@ -267,7 +265,7 @@ def analyze():
             + 0.03 * max_price
             + 0.01 * total_spending
             + 2.72 * n_items
-            + 5.5 * avg_location_weight
+            + 5.5  * avg_location_weight
         )
         daily_spending.clear()
         return jsonify({
