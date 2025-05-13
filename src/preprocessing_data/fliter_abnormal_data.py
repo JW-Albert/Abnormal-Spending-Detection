@@ -31,8 +31,8 @@ def sort_abnormal_data(input_csv):
     abnormal_path = os.path.join(abnormal_dir, 'abnormal.csv')
     
     # 儲存分類後的資料
-    normal_data.to_csv(normal_path, index=False, encoding='utf-8-sig')
-    abnormal_data.to_csv(abnormal_path, index=False, encoding='utf-8-sig')
+    normal_data.to_csv(normal_path, index=False, encoding='utf-8')
+    abnormal_data.to_csv(abnormal_path, index=False, encoding='utf-8')
     
     print(f"已將正常資料儲存至: {normal_path}")
     print(f"已將異常資料儲存至: {abnormal_path}")

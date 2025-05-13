@@ -13,9 +13,9 @@ def xlsx_to_csv(xlsx_path, output_dir=None):
     excel = pd.ExcelFile(xlsx_path)
     for sheet in excel.sheet_names:
         df = pd.read_excel(xlsx_path, sheet_name=sheet)
-        csv_name = f"{base_name}_{sheet}.csv"
+        csv_name = f"{base_name}.csv"
         csv_path = os.path.join(output_dir, csv_name)
-        df.to_csv(csv_path, index=False, encoding='utf-8-sig')
+        df.to_csv(csv_path, index=False, encoding='utf-8')
         print(f"已匯出: {csv_path}")
 
 if __name__ == '__main__':

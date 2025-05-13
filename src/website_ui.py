@@ -6,7 +6,7 @@ import joblib
 import os
 from scipy.stats import kurtosis, skew
 from scipy.fft import fft
-from get_include import get_unique_options
+from lib.get_include import get_unique_options
 import json
 
 app = Flask(__name__)
@@ -49,7 +49,7 @@ with open(os.path.join(MODEL_DIR, 'feature_order.json'), encoding='utf-8') as f:
 
 # 載入 autoencoder, ensemble
 try:
-    from autoencoder_model import get_autoencoder_scores
+    from lib.autoencoder_model import get_autoencoder_scores
     from ensemble import get_ensemble_score
     autoencoder_loaded = True
 except ImportError:
@@ -67,10 +67,13 @@ def load_models():
         elliptic_path = os.path.join(MODEL_DIR, 'elliptic_model.pkl')
         if os.path.exists(elliptic_path):
             models['elliptic'] = joblib.load(elliptic_path)
-        # 新增 LR 及多監督式模型載入
+        # 載入 LR, KNN, 及其他監督式模型
         lr_path = os.path.join(MODEL_DIR, 'lr_model.pkl')
         if os.path.exists(lr_path):
             models['lr'] = joblib.load(lr_path)
+        knn_path = os.path.join(MODEL_DIR, 'knn_model.pkl')
+        if os.path.exists(knn_path):
+            models['knn'] = joblib.load(knn_path)
         rf_path = os.path.join(MODEL_DIR, 'rf_model.pkl')
         if os.path.exists(rf_path):
             models['rf'] = joblib.load(rf_path)
@@ -80,9 +83,6 @@ def load_models():
         dt_path = os.path.join(MODEL_DIR, 'dt_model.pkl')
         if os.path.exists(dt_path):
             models['dt'] = joblib.load(dt_path)
-        knn_path = os.path.join(MODEL_DIR, 'knn_model.pkl')
-        if os.path.exists(knn_path):
-            models['knn'] = joblib.load(knn_path)
         svc_path = os.path.join(MODEL_DIR, 'svc_model.pkl')
         if os.path.exists(svc_path):
             models['svc'] = joblib.load(svc_path)
@@ -230,7 +230,9 @@ def analyze():
         nan_columns = list(all_features.columns[all_features.isna().any()])
         all_features = all_features.fillna(0)
         X = models['scaler'].transform(all_features)
-        # 多監督式模型推論
+        print('all_features(before scale):', all_features.values)
+        print('X(after scale):', X)
+        # 多監督式模型推論（含 LR 與 KNN）
         results = {}
         votes = []
         for name in ['lr', 'rf', 'gb', 'dt', 'knn', 'svc']:
@@ -238,7 +240,6 @@ def analyze():
             if model is not None:
                 prob = float(model.predict_proba(X)[0, 1])
                 results[name] = prob
-                # 以 0.5 為閾值，1=正常, 0=異常
                 votes.append(prob >= 0.5)
         # 多數決集成（超過三分之二同意）
         ensemble_majority = None

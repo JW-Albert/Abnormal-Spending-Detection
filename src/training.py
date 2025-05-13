@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from get_include import get_all_data
+from lib.get_include import get_all_data
 
 from scipy.stats import kurtosis, skew
 from scipy.fft import fft
@@ -27,8 +27,8 @@ from sklearn.exceptions import ConvergenceWarning
 import joblib
 from sklearn.neighbors import LocalOutlierFactor, KNeighborsClassifier
 from sklearn.covariance import EllipticEnvelope
-from autoencoder_model import get_autoencoder_scores
-from ensemble import get_ensemble_score
+from lib.autoencoder_model import get_autoencoder_scores
+from lib.ensemble import get_ensemble_score
 import json
 from sklearn.tree import DecisionTreeClassifier
 

@@ -223,7 +223,6 @@
                             ${data.results ? Object.entries(data.results).map(([model, score]) => `<p>${model.toUpperCase()} 分數：${score !== undefined ? score.toFixed(4) : '無'}</p>`).join('') : ''}
                             <p><b>多數決集成判斷：</b> ${data.ensemble_majority ? data.ensemble_majority : '無'}</p>
                             ${data.weight_warning ? `<p class="text-warning">警告：${data.weight_warning}</p>` : ''}
-                            ${data.nan_columns && data.nan_columns.length > 0 ? `<p class="text-danger">NaN 欄位：${data.nan_columns.join(', ')}</p>` : ''}
                         </div>
                     `;
                         resultCard.style.display = 'block';
