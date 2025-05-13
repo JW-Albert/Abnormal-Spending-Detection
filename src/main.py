@@ -29,6 +29,7 @@ from sklearn.neighbors import LocalOutlierFactor
 from sklearn.covariance import EllipticEnvelope
 from autoencoder_model import get_autoencoder_scores
 from ensemble import get_ensemble_score
+import json
 
 # 靜音收斂警告
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
@@ -512,5 +513,14 @@ os.makedirs(MODEL_DIR, exist_ok=True)
 joblib.dump(ocsvm, os.path.join(MODEL_DIR, 'ocsvm_model.pkl'))
 joblib.dump(iso_forest, os.path.join(MODEL_DIR, 'iso_forest_model.pkl'))
 joblib.dump(scaler, os.path.join(MODEL_DIR, 'scaler.pkl'))
+
+# 保存特徵順序
+with open(os.path.join(MODEL_DIR, 'feature_order.json'), 'w', encoding='utf-8') as f:
+    json.dump(list(features.columns), f)
+
+# 保存 LR 模型
+if len(classes) > 1:
+    joblib.dump(clf2, os.path.join(MODEL_DIR, 'lr_model.pkl'))
+    print("LR model saved successfully!")
 
 print("\nModels saved successfully!")

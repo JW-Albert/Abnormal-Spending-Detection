@@ -7,30 +7,69 @@ import os
 from scipy.stats import kurtosis, skew
 from scipy.fft import fft
 from get_include import get_unique_options
+import json
 
 app = Flask(__name__)
 
 # 載入模型和 scaler
-MODEL_DIR = '../models'
+MODEL_DIR = 'models'
 os.makedirs(MODEL_DIR, exist_ok=True)
 
 # 初始化模型和 scaler
 models = {
     'ocsvm': None,
     'iso_forest': None,
-    'scaler': None
+    'scaler': None,
+    'lof': None,
+    'elliptic': None,
+    'lr': None
 }
 
 # 儲存當日消費資料
 daily_spending = []
+
+# 載入 mapping
+API_DIR = 'API/mapping'
+def load_mapping(name):
+    with open(os.path.join(API_DIR, f'{name}.json'), encoding='utf-8') as f:
+        return json.load(f)
+item_map = load_mapping('item')
+location_map = load_mapping('location')
+category_map = load_mapping('category')
+location_weight_map = load_mapping('location_weight')
+
+# 載入特徵順序
+with open(os.path.join(MODEL_DIR, 'feature_order.json'), encoding='utf-8') as f:
+    feature_order = json.load(f)
+
+# 載入 autoencoder, ensemble
+try:
+    from autoencoder_model import get_autoencoder_scores
+    from ensemble import get_ensemble_score
+    autoencoder_loaded = True
+except ImportError:
+    autoencoder_loaded = False
 
 def load_models():
     try:
         models['ocsvm'] = joblib.load(os.path.join(MODEL_DIR, 'ocsvm_model.pkl'))
         models['iso_forest'] = joblib.load(os.path.join(MODEL_DIR, 'iso_forest_model.pkl'))
         models['scaler'] = joblib.load(os.path.join(MODEL_DIR, 'scaler.pkl'))
-    except:
-        print("Models not found. Please train the models first.")
+        # 新增 LOF 與 EllipticEnvelope 載入
+        lof_path = os.path.join(MODEL_DIR, 'lof_model.pkl')
+        if os.path.exists(lof_path):
+            models['lof'] = joblib.load(lof_path)
+        elliptic_path = os.path.join(MODEL_DIR, 'elliptic_model.pkl')
+        if os.path.exists(elliptic_path):
+            models['elliptic'] = joblib.load(elliptic_path)
+        # 新增 LR 載入
+        lr_path = os.path.join(MODEL_DIR, 'lr_model.pkl')
+        if os.path.exists(lr_path):
+            models['lr'] = joblib.load(lr_path)
+    except Exception as e:
+        print(f"Models not found or error: {e}. Please train the models first.")
+
+load_models()  # 確保不論如何都會載入模型
 
 def time_domain_features(df: pd.DataFrame, cols: list) -> pd.DataFrame:
     ops = {
@@ -64,6 +103,18 @@ def frequency_domain_features(df: pd.DataFrame, cols: list, fs: int = 1, base: i
     feature_names = [f"{col}_freq_{k}" for col in cols for k in range(1,n+1)]
     return pd.DataFrame([row], columns=feature_names)
 
+def extra_features_block(blk):
+    n_items = blk['Item'].nunique()
+    n_categories = blk['Category'].nunique()
+    n_locations = blk['Location'].nunique()
+    high_price_ratio = (blk['Price'] > 500).mean() if len(blk) > 0 else 0
+    max_price = blk['Price'].max() if len(blk) > 0 else 0
+    min_price = blk['Price'].min() if len(blk) > 0 else 0
+    mean_price = blk['Price'].mean() if len(blk) > 0 else 0
+    item_concentration = blk['Item'].value_counts(normalize=True).max() if len(blk) > 0 else 0
+    weekday = blk['Date'].iloc[0].weekday() if 'Date' in blk.columns else -1
+    return [n_items, n_categories, n_locations, high_price_ratio, max_price, min_price, mean_price, item_concentration, weekday]
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -82,6 +133,7 @@ def add_spending():
             'Location': data['location'],
             'Weight': data.get('weight', ''),
             'Item': data['item'],
+            'Category': data.get('category', ''),
             'Price': float(data['price']),
             'Quantity': 1,  # 預設數量為1
             'Total Daily Spending': float(data['price'])
@@ -101,73 +153,74 @@ def add_spending():
 def analyze():
     try:
         if not daily_spending:
-            return jsonify({
-                'success': False,
-                'error': '沒有消費資料可供分析'
-            })
-
+            return jsonify({'success': False, 'error': '沒有消費資料可供分析'})
+        if models['scaler'] is None:
+            return jsonify({'success': False, 'error': 'scaler 未載入，請先執行模型訓練'})
         df = pd.DataFrame(daily_spending)
-        for col in ['Location', 'Item']:
-            df[col + '_Code'] = pd.Categorical(df[col]).codes
-
-        num_cols = ['Price', 'Quantity', 'Total Daily Spending']
+        # robust 處理 Category 欄位
+        if 'Category' not in df.columns:
+            df['Category'] = ''
+        df['Item_Code'] = df['Item'].map(item_map).fillna(-1).astype(int)
+        df['Location_Code'] = df['Location'].map(location_map).fillna(-1).astype(int)
+        df['Category_Code'] = df['Category'].map(category_map).fillna(-1).astype(int)
+        df['Date'] = pd.Timestamp.today()
+        # 權重
+        def get_location_weight(x):
+            loc_name = str(x).strip()
+            code = location_map.get(loc_name, -1)
+            # 支援 int/str key
+            return location_weight_map.get(str(code), location_weight_map.get(int(code), 0))
+        df['Location_Weight'] = df['Location'].map(get_location_weight)
+        weight_warning = None
+        if (df['Location_Weight'] == 0).any():
+            weight_warning = '地點權重為0，請檢查 mapping 檔案或地點名稱是否正確'
+        num_cols = ['Price', 'Quantity', 'Location_Weight', 'Total Daily Spending', 'Item_Code']
         time_features = time_domain_features(df, num_cols)
         freq_features = frequency_domain_features(df, num_cols)
-
-        block_cats = df[['Location_Code', 'Item_Code']].mode()
-        if block_cats.empty:
-            block_cats = df[['Location_Code', 'Item_Code']].iloc[[0]]
-        else:
-            block_cats = block_cats.iloc[[0]]
-
-        # 新增：地點權重特徵
-        if 'Weight' in df.columns:
-            location_weight = df['Weight'].mode()
-            if not location_weight.empty:
-                location_weight = location_weight.iloc[0]
-            else:
-                location_weight = df['Weight'].iloc[0]
-        else:
-            location_weight = 0
-        location_weight_df = pd.DataFrame({'Location_Weight': [location_weight]})
-
-        # 合併所有特徵
-        all_features = pd.concat([time_features, freq_features, block_cats, location_weight_df], axis=1)
-
-        # 特徵順序要和訓練時一致
-        expected_features = [
-            'Price_rms', 'Price_mean', 'Price_std', 'Price_ptp', 'Price_kurtosis', 'Price_skewness',
-            'Quantity_rms', 'Quantity_mean', 'Quantity_std', 'Quantity_ptp', 'Quantity_kurtosis', 'Quantity_skewness',
-            'Total Daily Spending_rms', 'Total Daily Spending_mean', 'Total Daily Spending_std',
-            'Total Daily Spending_ptp', 'Total Daily Spending_kurtosis', 'Total Daily Spending_skewness',
-            'Price_freq_1', 'Price_freq_2', 'Price_freq_3',
-            'Quantity_freq_1', 'Quantity_freq_2', 'Quantity_freq_3',
-            'Total Daily Spending_freq_1', 'Total Daily Spending_freq_2', 'Total Daily Spending_freq_3',
-            'Location_Code', 'Item_Code', 'Location_Weight'
-        ]
-        all_features = all_features[expected_features]
-
+        extra = extra_features_block(df)
+        extra_df = pd.DataFrame([extra], columns=['n_items','n_categories','n_locations','high_price_ratio','max_price','min_price','mean_price','item_concentration','weekday'])
+        all_features = pd.concat([time_features, freq_features, extra_df], axis=1)
+        all_features['Location_Weight'] = df['Location_Weight'].mode()[0] if not df['Location_Weight'].mode().empty else 0
+        # 對齊特徵順序，補齊缺的欄位
+        for col in feature_order:
+            if col not in all_features.columns:
+                all_features[col] = 0
+        all_features = all_features[feature_order]
+        nan_columns = list(all_features.columns[all_features.isna().any()])
+        all_features = all_features.fillna(0)
         X = models['scaler'].transform(all_features)
-        predictions = {
-            'ocsvm': float(models['ocsvm'].score_samples(X)[0]),
-            'iso_forest': float(models['iso_forest'].score_samples(X)[0])
-        }
-        combined_score = (predictions['ocsvm'] + predictions['iso_forest']) / 2
-        is_anomaly = combined_score < -0.5
+        # 僅做 LR 推論
+        results = {}
+        if models.get('lr') is not None:
+            results['lr'] = float(models['lr'].predict_proba(X)[0, 1])
+            combined_score = results['lr']
+            is_anomaly = combined_score < 0.5
+        else:
+            return jsonify({'success': False, 'error': 'LR 模型未載入，請先訓練模型'})
+        # 依照指定公式計算 abnormal_score
+        n_locations = extra[2]
+        max_price = extra[4]
+        total_spending = df['Total Daily Spending'].sum()
+        n_items = extra[0]
+        abnormal_score = (
+            -36.80
+            + 16.78 * n_locations
+            + 0.03 * max_price
+            + 0.01 * total_spending
+            + 2.72 * n_items
+        )
         daily_spending.clear()
         return jsonify({
             'success': True,
-            'predictions': predictions,
-            'combined_score': combined_score,
+            'lr_score': combined_score,
             'is_anomaly': bool(is_anomaly),
+            'weight_warning': weight_warning,
+            'abnormal_score': abnormal_score,
+            'nan_columns': nan_columns,
             'message': '分析完成'
         })
     except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        })
+        return jsonify({'success': False, 'error': str(e)})
 
 if __name__ == '__main__':
-    load_models()
     app.run(debug=True) 
