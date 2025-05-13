@@ -14,8 +14,8 @@ def sort_abnormal_data(input_csv):
         raise ValueError("CSV 檔案中沒有 'Is Abnormal' 欄位")
     
     # 將資料分類
-    normal_data = df[df['Is Abnormal'] == 'No']
-    abnormal_data = df[df['Is Abnormal'] == 'Yes']
+    normal_data = df[df['Is Abnormal'] == 0]
+    abnormal_data = df[df['Is Abnormal'] == 1]
     
     # 設定輸出目錄
     base_dir = 'data'

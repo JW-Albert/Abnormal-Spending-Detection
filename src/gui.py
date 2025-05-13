@@ -240,44 +240,42 @@ def analyze():
                 results[name] = prob
                 # 以 0.5 為閾值，1=正常, 0=異常
                 votes.append(prob >= 0.5)
-        # 以 LR 為主異常判斷
-        if 'lr' in results:
-            combined_score = results['lr']
-            is_anomaly = combined_score < 0.5
-        else:
-            combined_score = np.mean(list(results.values())) if results else 0
-            is_anomaly = combined_score < 0.5
         # 多數決集成（超過三分之二同意）
         ensemble_majority = None
+        is_anomaly = None
         if votes:
             agree = sum(votes)
             if agree > (2/3)*len(votes):
                 ensemble_majority = '正常'
+                is_anomaly = False
             elif (len(votes)-agree) > (2/3)*len(votes):
                 ensemble_majority = '異常'
+                is_anomaly = True
             else:
                 ensemble_majority = '無明顯共識'
+                is_anomaly = None
         # 依照指定公式計算 abnormal_score
         n_locations = extra[2]
         max_price = extra[4]
         total_spending = df['Total Daily Spending'].sum()
         n_items = extra[0]
+        avg_location_weight = df['Location_Weight'].mean() if 'Location_Weight' in df.columns else 0
         abnormal_score = (
             -36.80
             + 16.78 * n_locations
             + 0.03 * max_price
             + 0.01 * total_spending
             + 2.72 * n_items
+            + 5.5 * avg_location_weight
         )
         daily_spending.clear()
         return jsonify({
             'success': True,
             'results': results,
-            'lr_score': results.get('lr'),
-            'is_anomaly': bool(is_anomaly),
+            'is_anomaly': is_anomaly,
             'ensemble_majority': ensemble_majority,
-            'weight_warning': weight_warning,
             'abnormal_score': abnormal_score,
+            'weight_warning': weight_warning,
             'nan_columns': nan_columns,
             'message': '分析完成'
         })

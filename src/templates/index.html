@@ -200,6 +200,9 @@
                     if (data.success) {
                         updateSpendingList([]);
                         document.getElementById('analyzeBtn').disabled = true;
+                        // 清空分析結果
+                        document.getElementById('resultCard').style.display = 'none';
+                        document.getElementById('analysisResult').innerHTML = '';
                     } else {
                         alert('清空失敗：' + data.error);
                     }
@@ -216,7 +219,6 @@
                         resultDiv.innerHTML = `
                         <div class="alert ${data.is_anomaly ? 'alert-danger' : 'alert-success'}">
                             <h4 class="alert-heading">${data.is_anomaly ? '異常消費' : '正常消費'}</h4>
-                            <p>LR 分數：${data.lr_score !== undefined ? data.lr_score.toFixed(4) : '無'}</p>
                             <p>Abnormal Score：${data.abnormal_score !== undefined ? data.abnormal_score.toFixed(4) : '無'}</p>
                             ${data.results ? Object.entries(data.results).map(([model, score]) => `<p>${model.toUpperCase()} 分數：${score !== undefined ? score.toFixed(4) : '無'}</p>`).join('') : ''}
                             <p><b>多數決集成判斷：</b> ${data.ensemble_majority ? data.ensemble_majority : '無'}</p>
