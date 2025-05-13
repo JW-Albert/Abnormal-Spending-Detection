@@ -133,4 +133,66 @@ Isolation Forest  0.028302   0.166667  0.010101  0.019048
 
 ---
 
+如需針對每張圖做更細緻的說明，或想討論資料/特徵如何優化，請參考 img 資料夾內的圖檔，或聯絡開發者。
+
+## 2024/07 最新模型與數據分析
+
+### 1. 終端機輸出與模型評估
+
+```
+              precision    recall  f1-score   support
+
+           0     1.0000    0.8571    0.9231         7
+           1     0.9630    1.0000    0.9811        26
+
+    accuracy                         0.9697        33
+   macro avg     0.9815    0.9286    0.9521        33
+weighted avg     0.9708    0.9697    0.9688        33
+```
+
+- 監督式分類（Logistic Regression）在測試集上表現良好，但異常樣本（0）僅 7 筆，資料仍有不平衡現象。
+- 高分不代表模型真的有辨識異常能力，需注意過擬合與資料分布。
+
+```
+Anomaly Detection Models Comparison:
+                  Accuracy  Precision    Recall        F1
+Hotelling T²      0.181818   0.222222  0.015385  0.028777
+SPE               0.230303   0.666667  0.046154  0.086331
+One-Class SVM     0.157576   0.000000  0.000000  0.000000
+Isolation Forest  0.193939   0.333333  0.023077  0.043165
+```
+- 無監督異常偵測模型（Hotelling T²、SPE、OCSVM、Isolation Forest）在本資料集上表現普遍不佳，recall 與 F1 score 極低。
+- SPE 的 precision 較高，代表預測為異常時較準，但 recall 低，漏掉大部分異常。
+- OCSVM 幾乎無法偵測異常。
+
+### 2. 主要圖片說明
+- `img/model_comparison.png`：各模型指標條狀圖，直觀比較模型表現。
+- `img/roc_auc.png`：監督式模型 ROC 曲線，AUC 越高代表分類能力越好。
+- `img/pca_projection.png`、`img/lda_visualization.png`：降維後資料分布，若異常/正常混雜，代表特徵區分力有限。
+- `img/ocsvm_scores.png`、`img/iso_forest_scores.png`、`img/t_squared.png`、`img/spe.png`：各異常分數分布與閾值線。
+- `img/fisher_score_top10.png`：Fisher Score 前 10 名特徵，顯示哪些特徵對分類最有貢獻。
+- `img/time_features.png`、`img/freq_features.png`：時域/頻域特徵分布。
+- `img/daily_spending.png`：每日消費金額正常/異常對比。
+
+### 3. 綜合結論
+- 目前資料特徵無法有效區分異常與正常，無監督異常偵測模型效果有限。
+- 監督式模型在測試集上表現佳，但異常樣本數量偏少，需注意評估指標的解讀。
+- 特徵如 `Abnormal Score_skewness`、`Total Daily Spending_kurtosis` 在多個 block 產生 NaN，已自動補 0 處理。
+
+### 4. 改善建議
+- 增加異常樣本數量，或嘗試資料擴增（如 SMOTE）。
+- 重新檢視特徵設計，加入 domain knowledge 或專家規則。
+- 可考慮用更複雜的模型（如深度學習、集成學習），但需有足夠異常資料。
+- 嘗試半監督學習（semi-supervised）、主動學習（active learning）等方法。
+- 針對異常樣本進行特徵工程加強。
+
+### 5. 可擴充的分析模型建議
+- **Local Outlier Factor (LOF)**：基於鄰近密度的異常偵測。
+- **Elliptic Envelope (Robust Covariance)**：適合多變量常態分布資料。
+- **AutoEncoder/Deep Learning**：用於高維資料的非線性特徵學習。
+- **Ensemble Methods**：結合多種異常偵測模型提升穩健性。
+- **Prophet/ARIMA**：若有時間序列特性，可用於異常點偵測。
+
+---
+
 如需針對每張圖做更細緻的說明，或想討論資料/特徵如何優化，請參考 img 資料夾內的圖檔，或聯絡開發者。 

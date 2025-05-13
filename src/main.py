@@ -127,7 +127,7 @@ def fisher_score(X: np.ndarray, y: np.ndarray) -> np.ndarray:
 # --------------------------------------------------
 # 7. 計算時頻域特徵並繪圖
 # --------------------------------------------------
-num_cols = ['Price','Quantity','Total Daily Spending']
+num_cols = ['Price','Quantity','Location Weight','Abnormal Score','Total Daily Spending']
 time_df  = time_domain(df_all, num_cols, unit=10)
 freq_df  = frequency_domain(df_all, num_cols, fs=1, base=1, n=3, unit=10)
 
@@ -172,8 +172,22 @@ for i in range(0, len(df_all), 10):
     labels.append(int(blk['Label'].mode()[0]))
 labels = np.array(labels)
 
-features = pd.concat([time_df, freq_df], axis=1)
-merged   = features.copy()
+# 這裡自動將 NaN 補 0
+if features.isna().any().any():
+    print("\n=== 以下 block-level 特徵有 NaN，將自動補 0 ===")
+    for idx, row in features[features.isna().any(axis=1)].iterrows():
+        nan_cols = row.index[row.isna()].tolist()
+        print(f"Block {idx} 缺失欄位: {nan_cols}")
+        block = df_all.iloc[idx*10:idx*10+10]
+        for i, orig_row in block.iterrows():
+            missing = orig_row.isna()
+            if missing.any():
+                miss_cols = orig_row.index[missing].tolist()
+                print(f"  原始資料 index {i} 缺失欄位: {miss_cols}")
+    features = features.fillna(0)
+
+# 產生 merged.csv 用 dropna 後的 features/labels
+merged = features.copy()
 merged['Label'] = labels
 merged.to_csv(os.path.join(DATA_DIR,'merged.csv'), index=False)
 
